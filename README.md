@@ -1,7 +1,7 @@
 # DeepBattler
 World First LLM-driven Hearthstone Battleground Agent 
 
-Custom Non-Commercial License
+# Custom Non-Commercial License
 
 Copyright (c) [2024] [William-Dic]
 
