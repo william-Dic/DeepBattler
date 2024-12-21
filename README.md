@@ -12,8 +12,6 @@ DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Ba
 
 DeepBattler's strength can match that of the **top 0.1% players on EU servers**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
 
-![DeepBattler Interface](https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da)
-
 ## System Components  
 
 ### 1. Hearthstone Deck Tracker (HDT) Plugin  
@@ -103,8 +101,6 @@ DeepBattler，是一款专为《炉石传说》战场模式打造的先进助手
 
 DeepBattler的实力可以匹敌**欧服排名前0.1%**的玩家，得益于其深入的语音辅助指导，帮助你在关键时刻做出最佳决策。让我们一起提升你的游戏水平吧！
 
-![DeepBattler界面](https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da)
-
 ## 系统组件  
 
 ### 1. 《炉石传说》卡组跟踪器（HDT）插件  
@@ -162,8 +158,6 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%**的玩家，得益于其�
 DeepBattlerへようこそ。『ハースストーン』のバトルグラウンド向けに特化した最新のアシスタントです。大型言語モデル（LLM）を搭載し、『ハースストーン』デックトラッカー（HDT）プラグインとシームレスに統合して、**リアルタイムの戦略アドバイス**を提供します。ランキングを上げたい方も、ゲームスキルを向上させたい方も、DeepBattlerがサポートします！
 
 DeepBattlerの実力は**EUサーバーの上位0.1%**のプレイヤーに匹敵します。音声支援ガイダンスにより、重要な場面で最適な判断を下す手助けをします。さあ、一緒にゲームをレベルアップしましょう！
-
-![DeepBattlerインターフェース](https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da)
 
 ## システムコンポーネント  
 
