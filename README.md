@@ -1,4 +1,4 @@
-# DeepBattler - Your Ultimate LLM-Powered Hearthstone Battlegrounds Companion
+# Well met, hero! I’m DeepBattler, the Battlegrounds genius AI! 🍻🍻🍻
 
 An advanced Large Language Model (LLM) powered assistant for Hearthstone Battlegrounds that combines a Hearthstone Deck Tracker plugin with state-of-the-art language models to provide real-time strategic coaching, this tool has helped achieve top 0.1% ranking on EU servers and provides real-time voice-assisted coaching for optimal decision making.
 
@@ -45,25 +45,6 @@ api_key = "your-openai-api-key-here"
 3. Launch the LLM agent:
 ```bash
 python DeepBattler.py
-```
-
-## Output Format
-
-The plugin generates a structured JSON file containing game state information that the LLM agent processes:
-
-```json
-{
-  "HeroName": "string",
-  "HeroHealth": number,
-  "Coins": number,
-  "TavernUpgradeCost": "string",
-  "HeroPowerDescription": "string",
-  "CurrentTavernTier": number,
-  "HeroPowerCost": number,
-  "Warband": [...],
-  "Hand": [...],
-  "TavernEntities": [...]
-}
 ```
 
 # Custom Non-Commercial License
