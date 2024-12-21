@@ -1,10 +1,7 @@
 # DeepBattler - Your Ultimate Battlegrounds Coach Powered by LLM! 🍻🍻
 
-<p style="text-align: center;">
-
-**[English](#english)** | [**中文**](#chinese) | [**日本語**](#japanese)**
-
-</p>
+| **[English](#english)** | [**中文**](#chinese) | [**日本語**](#japanese)** |
+|:-----------------------:|:--------------------:|:------------------------:|
 
 
 ---
