@@ -1,4 +1,4 @@
-# DeepBattler - LLM-Powered Battlegrounds Coach! 🍻🍻
+# DeepBattler - Your Ultimate Battlegrounds Coach Powered by LLM! 🍻🍻
 
 **[English](#english)** | [**中文**](#chinese) | [**日本語**](#japanese)
 
@@ -6,25 +6,27 @@
 
 ## English <a id="english"></a>
 
-### Well met, hero! I’m DeepBattler, your LLM-Powered Battlegrounds Coach! 🍻🍻  
+### Hey there, Hero! I’m DeepBattler, Your Personal Battlegrounds Coach! 🍻🍻
 
-DeepBattler is an advanced Large Language Model (LLM)-powered assistant tailored for Hearthstone Battlegrounds. Integrating seamlessly with a Hearthstone Deck Tracker (HDT) plugin, it leverages cutting-edge LLM capabilities to deliver **real-time strategic coaching**. This tool has propelled players into the **top 0.1% rankings on EU servers** and offers real-time voice-assisted guidance for optimal decision-making.  
+Welcome to DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Battlegrounds enthusiasts. Powered by an advanced Large Language Model (LLM), DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game, DeepBattler has got your back!
+
+DeepBattler's strength can match that of the **top 0.1% players on EU servers**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
 
 ![DeepBattler Interface](https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da)
 
 ## System Components  
 
 ### 1. Hearthstone Deck Tracker (HDT) Plugin  
-- Monitors game state in real-time  
-- Outputs JSON-based state representations  
-- Captures and processes data efficiently  
-- Provides comprehensive game insights  
+- **Real-Time Monitoring:** Keeps track of your game state as it happens  
+- **JSON Outputs:** Provides clear, structured data  
+- **Efficient Data Handling:** Ensures smooth performance  
+- **In-Depth Insights:** Offers comprehensive analysis of your gameplay  
 
 ### 2. LLM-Powered Python Agent  
-- Integrates advanced language model capabilities  
-- Performs real-time strategic analysis  
-- Supports natural voice communication  
-- Offers adaptive, scenario-based decision-making  
+- **Advanced Analysis:** Utilizes powerful language model capabilities  
+- **Strategic Advice:** Gives you real-time tactical recommendations  
+- **Voice Communication:** Interact naturally with voice commands  
+- **Adaptive Decisions:** Adjusts strategies based on different game scenarios  
 
 ## Setup and Configuration  
 
@@ -66,27 +68,27 @@ DeepBattler is an advanced Large Language Model (LLM)-powered assistant tailored
 
 © [2024] [William-Dic]  
 
-Permission is granted free of charge to any individual to use, copy, modify, and distribute this software for personal, educational, or non-commercial purposes, under the following terms:  
+You’re free to use, copy, modify, and share this software for personal, educational, or non-commercial purposes. Here’s what you need to know:
 
 1. **Non-Commercial Use**  
-   The Software or its derivatives may not be used, sold, or distributed for commercial purposes without prior written permission from the copyright holder.  
+   Feel free to use and tweak the software, but don’t sell or distribute it commercially without permission.
 
 2. **Hearthstone Intellectual Property**  
-   This Software may reference or utilize assets, names, or materials from Blizzard Entertainment's Hearthstone. All such assets remain the intellectual property of Blizzard Entertainment. Usage of this Software must comply with Blizzard Entertainment's terms and conditions. This Software is not affiliated with or endorsed by Blizzard Entertainment.  
+   This tool uses assets from Blizzard Entertainment’s Hearthstone. Make sure to follow Blizzard’s terms when using DeepBattler. This tool isn’t affiliated with or endorsed by Blizzard.
 
 3. **Acknowledgment of External Contributions**  
-   This Software incorporates components from Hearthstone Deck Tracker (HDT), developed by HearthSim. All rights to HDT and its components remain with HearthSim and its contributors. This acknowledgment does not imply any ownership or endorsement of this Software by HearthSim.  
+   DeepBattler includes components from Hearthstone Deck Tracker (HDT) by HearthSim. All rights to HDT belong to HearthSim and its contributors. This doesn’t imply any ownership or endorsement by HearthSim.
 
 4. **No Warranty**  
-   This Software is provided "as is," without any express or implied warranties, including but not limited to fitness for a particular purpose or non-infringement. The authors shall not be held liable for any claims, damages, or other liabilities arising from the use or misuse of this Software.  
+   The software is provided "as is." We aren’t responsible for any issues that arise from using it.
 
 5. **Derivative Works**  
-   Any modifications or derivative works must include this license and comply with its restrictions.  
+   If you modify or build upon this software, include this license and follow its terms.
 
 6. **Redistribution**  
-   Redistribution of this Software or its derivatives must retain this license file and copyright notices.  
+   If you share the software or any derivatives, keep this license and the copyright notices.
 
-By using this Software, you agree to these terms.  
+By using DeepBattler, you agree to these terms.
 
 [William-Dic]  
 [2024]
@@ -95,25 +97,27 @@ By using this Software, you agree to these terms.
 
 ## 中文 <a id="chinese"></a>
 
-### 英雄，欢迎！我是DeepBattler，你的LLM驱动战场教练！🍻🍻
+### 英雄，欢迎！我是DeepBattler，你的专属战场教练！🍻🍻
 
-DeepBattler是一款先进的大型语言模型（LLM）驱动的助手，专为《炉石传说》战场模式量身定制。它无缝集成了《炉石传说》卡组跟踪器（HDT）插件，利用尖端的LLM能力提供**实时战略指导**。这款工具已帮助玩家进入**欧服排名前0.1%**，并提供实时语音辅助指导，帮助做出最佳决策。
+欢迎使用DeepBattler，这是一款专为《炉石传说》战场模式打造的先进助手。由大型语言模型（LLM）驱动，DeepBattler无缝集成《炉石传说》卡组跟踪器（HDT）插件，为你提供**实时战略建议**。无论你是想提升排名还是改善游戏技巧，DeepBattler都能助你一臂之力！
+
+DeepBattler的实力可以匹敌**欧服排名前0.1%**的玩家，得益于其深入的语音辅助指导，帮助你在关键时刻做出最佳决策。让我们一起提升你的游戏水平吧！
 
 ![DeepBattler界面](https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da)
 
 ## 系统组件  
 
 ### 1. 《炉石传说》卡组跟踪器（HDT）插件  
-- 实时监控游戏状态  
-- 输出基于JSON的状态表示  
-- 高效捕获和处理数据  
-- 提供全面的游戏洞察  
+- **实时监控:** 实时跟踪你的游戏状态  
+- **JSON输出:** 提供清晰、结构化的数据  
+- **高效数据处理:** 确保流畅运行  
+- **深入洞察:** 提供全面的游戏分析  
 
 ### 2. LLM驱动的Python代理  
-- 集成先进的语言模型功能  
-- 执行实时战略分析  
-- 支持自然语音通信  
-- 提供自适应的情景决策  
+- **高级分析:** 利用强大的语言模型功能  
+- **战略建议:** 提供实时战术建议  
+- **语音通信:** 自然的语音交互  
+- **自适应决策:** 根据不同游戏情境调整策略  
 
 ## 设置与配置  
 
@@ -153,25 +157,27 @@ DeepBattler是一款先进的大型语言模型（LLM）驱动的助手，专为
 
 ## 日本語 <a id="japanese"></a>
 
-### 英雄よ、よく来た！私はDeepBattler、あなたのLLM搭載バトルグラウンドコーチです！🍻🍻
+### 英雄よ、ようこそ！私はDeepBattler、あなた専用のバトルグラウンドコーチです！🍻🍻
 
-DeepBattlerは、『ハースストーン』のバトルグラウンド向けに特化した高度な大規模言語モデル（LLM）搭載アシスタントです。『ハースストーン』デックトラッカー（HDT）プラグインとシームレスに統合し、最先端のLLM機能を活用して**リアルタイムの戦略コーチング**を提供します。このツールはプレイヤーを**EUサーバーの上位0.1%のランキング**に押し上げ、最適な意思決定のためのリアルタイム音声支援ガイダンスを提供します。
+DeepBattlerへようこそ。『ハースストーン』のバトルグラウンド向けに特化した最新のアシスタントです。大型言語モデル（LLM）を搭載し、『ハースストーン』デックトラッカー（HDT）プラグインとシームレスに統合して、**リアルタイムの戦略アドバイス**を提供します。ランキングを上げたい方も、ゲームスキルを向上させたい方も、DeepBattlerがサポートします！
+
+DeepBattlerの実力は**EUサーバーの上位0.1%**のプレイヤーに匹敵します。音声支援ガイダンスにより、重要な場面で最適な判断を下す手助けをします。さあ、一緒にゲームをレベルアップしましょう！
 
 ![DeepBattlerインターフェース](https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da)
 
 ## システムコンポーネント  
 
 ### 1. 『ハースストーン』デックトラッカー（HDT）プラグイン  
-- ゲーム状態をリアルタイムで監視  
-- JSONベースの状態表現を出力  
-- データを効率的にキャプチャおよび処理  
-- 包括的なゲームインサイトを提供  
+- **リアルタイム監視:** ゲーム状態をリアルタイムで追跡  
+- **JSON出力:** 明確で構造化されたデータを提供  
+- **効率的なデータ処理:** スムーズなパフォーマンスを保証  
+- **詳細なインサイト:** ゲームの分析を包括的に提供  
 
 ### 2. LLM搭載Pythonエージェント  
-- 先進的な言語モデル機能を統合  
-- リアルタイムの戦略分析を実行  
-- 自然な音声コミュニケーションをサポート  
-- 適応型のシナリオベース意思決定を提供  
+- **高度な分析:** 強力な言語モデル機能を活用  
+- **戦略的アドバイス:** リアルタイムで戦術的な提案を提供  
+- **音声コミュニケーション:** 自然な音声インタラクション  
+- **適応型の意思決定:** ゲームの状況に応じて戦略を調整  
 
 ## セットアップと構成  
 
@@ -206,4 +212,3 @@ DeepBattlerは、『ハースストーン』のバトルグラウンド向けに
    ```bash  
    python DeepBattler.py  
    ```  
-
