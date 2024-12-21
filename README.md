@@ -33,7 +33,7 @@ private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";
 ### LLM Agent Setup
 1. Install required Python packages:
 ```bash
-pip install openai playsound==1.2.2 time os json tempfile
+pip install openai playsound==1.2.2
 ```
 Note: playsound version 1.2.2 is specifically required for compatibility.
 
