@@ -2,6 +2,8 @@
 
 An advanced Large Language Model (LLM) powered assistant for Hearthstone Battlegrounds that combines a Hearthstone Deck Tracker plugin with SOTA LLM to provide **real-time strategic coaching**, this tool has helped achieve **top 0.1% ranking on EU servers** and provides real-time voice-assisted coaching for optimal decision making.
 
+<img width="1143" alt="e9adcf966ffdfa1fea40d6ca0c844e3" src="https://github.com/user-attachments/assets/daff2ce4-c499-4b9f-8232-8819e4f3e6da" />
+
 ## System Components
 
 ### 1. Hearthstone Deck Tracker (HDT) Plugin
@@ -19,16 +21,19 @@ An advanced Large Language Model (LLM) powered assistant for Hearthstone Battleg
 ## Setup and Configuration
 
 ### Plugin Setup
-1. Download the latest release from the releases page
-2. Close Hearthstone Deck Tracker if it's running
-3. Copy the plugin files to your Hearthstone Deck Tracker plugins folder
-   - Default location: `%AppData%\Hearthstone Deck Tracker\Plugins`
-4. Open Hearthstone Deck Tracker
-5. Enable the plugin in HDT's settings menu under `Options -> Plugins`
-6. Configure the `_path` variable in the plugin code:
+1. Open DeepBattlerPlugin/Class1.cs
+2. Configure the `_path` variable in the plugin code
 ```csharp
 private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";
 ```
+3. Run it and find the complied plugin DeepBattlerPlugin.dll under DeepBattlerPlugin/bin/Debug
+4. Open Hearthstone Deck Tracker
+5. Copy the plugin files to your Hearthstone Deck Tracker plugins folder
+   - Default location: `%AppData%\Hearthstone Deck Tracker\Plugins`
+   <img width="825" alt="79d99dfe1e91824af626b3d9145a156" src="https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24" />
+6. Open Hearthstone Deck Tracker
+7. Enable the plugin in HDT's settings menu under `Options -> Plugins`
+8. If successful when you open Hearthstone Battleground You will see game_state.json is updating when new entity is shown.
 
 ### LLM Agent Setup
 1. Install required Python packages:
