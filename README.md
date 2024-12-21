@@ -4,7 +4,7 @@
 
 ---
 
-## English {#english}
+## English <a id="english"></a>
 
 ### Well met, hero! I’m DeepBattler, your LLM-Powered Battlegrounds Coach! 🍻🍻  
 
