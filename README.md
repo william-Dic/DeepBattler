@@ -1,5 +1,3 @@
----
-
 # DeepBattler - LLM-Powered Battlegrounds Coach! 🍻🍻
 
 **[English](#english)** | [**中文**](#中文) | [**日本語**](#日本語)
@@ -208,6 +206,4 @@ DeepBattlerは、『ハースストーン』のバトルグラウンド向けに
    ```bash  
    python DeepBattler.py  
    ```  
-
----
 
