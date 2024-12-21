@@ -208,3 +208,5 @@ DeepBattlerの実力は**EUサーバーの上位0.1%**のプレイヤーに匹�
    ```bash  
    python DeepBattler.py  
    ```  
+
+</div>
