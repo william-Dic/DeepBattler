@@ -1,4 +1,4 @@
-# DeepBattler - LLM-Powered Hearthstone Battlegrounds Assistant
+# DeepBattler - Your Ultimate LLM-Powered Hearthstone Battlegrounds Companion
 
 An advanced Large Language Model (LLM) powered assistant for Hearthstone Battlegrounds that combines a Hearthstone Deck Tracker plugin with state-of-the-art language models to provide real-time strategic coaching, this tool has helped achieve top 0.1% ranking on EU servers and provides real-time voice-assisted coaching for optimal decision making.
 
