@@ -93,7 +93,7 @@ By using this Software, you agree to these terms.
 
 ---
 
-## 中文 {#chinese}
+## 中文 <a id="chinese"></a>
 
 ### 英雄，欢迎！我是DeepBattler，你的LLM驱动战场教练！🍻🍻
 
@@ -151,7 +151,7 @@ DeepBattler是一款先进的大型语言模型（LLM）驱动的助手，专为
 
 ---
 
-## 日本語 {#japanese}
+## 日本語 <a id="japanese"></a>
 
 ### 英雄よ、よく来た！私はDeepBattler、あなたのLLM搭載バトルグラウンドコーチです！🍻🍻
 
