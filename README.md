@@ -2,9 +2,7 @@
 
 **[English](#english)** | **[**中文**](#chinese)** | **[**日本語**](#japanese)**
 
-## English <a id="english"></a>
-
-### Hey there, Hero! I’m DeepBattler, Your Personal Battlegrounds Coach! 🍻🍻
+### Hey there, Hero! I’m DeepBattler, Your Personal Battlegrounds Coach! 🍻🍻 <a id="english"></a>
 
 DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Battlegrounds enthusiasts. Powered by an advanced Large Language Model (LLM), DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game, DeepBattler has got your back!
 
@@ -91,9 +89,7 @@ By using DeepBattler, you agree to these terms.
 
 ---
 
-## 中文 <a id="chinese"></a>
-
-### 酒馆里随便找个位置坐坐！我是DeepBattler，你的专属酒馆战棋助手！🍻🍻
+### 快在酒馆里随便找个位置坐坐！我是DeepBattler，你的专属酒馆战棋助手！🍻🍻 <a id="chinese"></a>
 
 DeepBattler，是一款专为《炉石传说》战场模式打造的先进助手。由大型语言模型（LLM）驱动，DeepBattler无缝集成《炉石传说》卡组跟踪器（HDT）插件，为你提供**实时战略建议**。无论你是想提升排名还是改善游戏技巧，DeepBattler都能助你一臂之力！
 
@@ -149,9 +145,7 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%**的玩家，得益于其�
 
 ---
 
-## 日本語 <a id="japanese"></a>
-
-### 英雄よ、ようこそ！私はDeepBattler、あなた専用のバトルグラウンドコーチです！🍻🍻
+### 英雄よ、ようこそ！私はDeepBattler、あなた専用のバトルグラウンドコーチです！🍻🍻 <a id="japanese"></a>
 
 DeepBattlerへようこそ。『ハースストーン』のバトルグラウンド向けに特化した最新のアシスタントです。大型言語モデル（LLM）を搭載し、『ハースストーン』デックトラッカー（HDT）プラグインとシームレスに統合して、**リアルタイムの戦略アドバイス**を提供します。ランキングを上げたい方も、ゲームスキルを向上させたい方も、DeepBattlerがサポートします！
 
