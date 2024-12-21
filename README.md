@@ -30,11 +30,10 @@ private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";
 4. Open Hearthstone Deck Tracker
 5. Copy the plugin files to your Hearthstone Deck Tracker plugins folder
    - Default location: `%AppData%\Hearthstone Deck Tracker\Plugins`
-   <img width="825" alt="79d99dfe1e91824af626b3d9145a156" src="https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24" />
 6. Open Hearthstone Deck Tracker
 7. Enable the plugin in HDT's settings menu under `Options -> Plugins`
-8. If successful when you open Hearthstone Battleground You will see game_state.json is updating when new entity is shown.
-
+ <img width="825" alt="79d99dfe1e91824af626b3d9145a156" src="https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24" />
+ 
 ### LLM Agent Setup
 1. Install required Python packages:
 ```bash
