@@ -8,7 +8,7 @@
 
 ### Hey there, Hero! I’m DeepBattler, Your Personal Battlegrounds Coach! 🍻🍻
 
-Welcome to DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Battlegrounds enthusiasts. Powered by an advanced Large Language Model (LLM), DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game, DeepBattler has got your back!
+DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Battlegrounds enthusiasts. Powered by an advanced Large Language Model (LLM), DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game, DeepBattler has got your back!
 
 DeepBattler's strength can match that of the **top 0.1% players on EU servers**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
 
@@ -97,9 +97,9 @@ By using DeepBattler, you agree to these terms.
 
 ## 中文 <a id="chinese"></a>
 
-### 英雄，欢迎！我是DeepBattler，你的专属战场教练！🍻🍻
+### 酒馆里随便找个位置坐坐！我是DeepBattler，你的专属酒馆战棋助手！🍻🍻
 
-欢迎使用DeepBattler，这是一款专为《炉石传说》战场模式打造的先进助手。由大型语言模型（LLM）驱动，DeepBattler无缝集成《炉石传说》卡组跟踪器（HDT）插件，为你提供**实时战略建议**。无论你是想提升排名还是改善游戏技巧，DeepBattler都能助你一臂之力！
+DeepBattler，是一款专为《炉石传说》战场模式打造的先进助手。由大型语言模型（LLM）驱动，DeepBattler无缝集成《炉石传说》卡组跟踪器（HDT）插件，为你提供**实时战略建议**。无论你是想提升排名还是改善游戏技巧，DeepBattler都能助你一臂之力！
 
 DeepBattler的实力可以匹敌**欧服排名前0.1%**的玩家，得益于其深入的语音辅助指导，帮助你在关键时刻做出最佳决策。让我们一起提升你的游戏水平吧！
 
