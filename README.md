@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<center>
 
 # DeepBattler - Your Ultimate Battlegrounds Coach Powered by LLM! 🍻🍻
 
@@ -203,7 +203,7 @@ DeepBattlerの実力は**EUサーバーの上位0.1%**のプレイヤーに匹�
    ```python  
    api_key = "your-openai-api-key-here"  
    ```  
-
+</center>
 3. LLMエージェントを起動します：  
    ```bash  
    python DeepBattler.py  
