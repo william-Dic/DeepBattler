@@ -1,4 +1,4 @@
-# DeepBattler - Your Ultimate Battlegrounds Coach Powered by LLM! 🍻🍻 <a id="english"></a>
+# DeepBattler - Your BEST Battlegrounds Coach/Friend Powered by LLM! 🍻🍻 <a id="english"></a>
 
 **[English](#english)** | **[**中文**](#chinese)** | **[**日本語**](#japanese)**
 
