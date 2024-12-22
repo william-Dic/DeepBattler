@@ -1,8 +1,8 @@
-# DeepBattler - Your Ultimate Battlegrounds Coach Powered by LLM! 🍻🍻
+# DeepBattler - Your Ultimate Battlegrounds Coach Powered by LLM! 🍻🍻 <a id="english"></a>
 
 **[English](#english)** | **[**中文**](#chinese)** | **[**日本語**](#japanese)**
 
-### Hey there, Hero! I’m DeepBattler, Your Personal Battlegrounds Coach! 🍻🍻 <a id="english"></a>
+### Hey there, Hero! I’m DeepBattler, Your Personal Battlegrounds Coach! 🍻🍻 
 
 DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Battlegrounds enthusiasts. Powered by an advanced Large Language Model (LLM), DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game, DeepBattler has got your back!
 
@@ -88,6 +88,7 @@ By using DeepBattler, you agree to these terms.
 [2024]
 
 ---
+# DeepBattler - 你的专属大模型酒馆战棋助手！ 🍻🍻 <a id="chinese"></a>
 
 ### 快在酒馆里随便找个位置坐坐！我是DeepBattler，你的专属酒馆战棋助手！🍻🍻 <a id="chinese"></a>
 
@@ -144,6 +145,7 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其�
    ```  
 
 ---
+# DeepBattler - あなた専用の大型モデル Battlegrounds アシスタント！ 🍻🍻 <a id="japanese"></a>
 
 ### 英雄よ、ようこそ！私はDeepBattler、あなた専用のバトルグラウンドコーチです！🍻🍻 <a id="japanese"></a>
 
