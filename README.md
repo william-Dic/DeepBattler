@@ -1,12 +1,12 @@
-# DeepBattler - Your BEST Battlegrounds Coach/Friend Powered by LLM! 🍻🍻 <a id="english"></a>
+# DeepBattler - Your BEST LLM Battlegrounds Coach/Friend！🍻🍻 <a id="english"></a>
 
 **[English](#english)** | **[**中文**](#chinese)** | **[**日本語**](#japanese)**
 
 ### Well met, hero! I'm DeepBattler, the tavern master who brews brilliant plays, belly laughs, and more pep than a dancing Murloc on espresso! 🍻🐟
 
-DeepBattler, the cutting-edge assistant designed specifically for Hearthstone Battlegrounds enthusiasts. Powered by an advanced Large Language Model (LLM), DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game, DeepBattler has got your back!
+DeepBattler, a LLM-Driven Hearthstone Battlegrounds enthusiasts like us. DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game experience, DeepBattler has got your back!
 
-DeepBattler's strength can match that of the **top 0.1% players on EU servers**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
+DeepBattler's strength can match that of the **top 0.1% players on EU servers(8K ELO)**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
 
 ## System Components  
 
