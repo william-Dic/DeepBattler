@@ -278,11 +278,6 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其�
 [William-Dic]  
 [2024]
 
-#### Important Notes
-
-- **Compatibility**: Ensure that the versions of `HearthDb.dll` and `HearthstoneDeckTracker.exe` you are using are compatible with your current version of **Hearthstone Deck Tracker (HDT)** to avoid potential compatibility issues.
-- **Plugin Directory**: After completing the above steps, make sure to place the compiled `DeepBattlerPlugin.dll` into HDT's `Plugins` folder so that HDT can correctly load your plugin.
-
 ---
 
 # DeepBattler - あなた専用の大型モデル Battlegrounds アシスタント！ 🍻🍻 <a id="japanese"></a>
