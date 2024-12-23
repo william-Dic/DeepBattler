@@ -114,7 +114,7 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其�
 
 ### 插件设置  
 1. 打开 `DeepBattlerPlugin/Class1.cs` 文件。  
-2. 将 `_path` 变量设置为你的游戏状态文件的绝对路径：  
+2. 将 `_path` 变量设置为你的game_state.json的绝对路径：  
    ```csharp  
    private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";  
    ```  
