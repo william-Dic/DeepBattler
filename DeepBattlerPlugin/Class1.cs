@@ -8,6 +8,7 @@ using Hearthstone_Deck_Tracker.Plugins;
 using HearthDb.Enums;
 using Hearthstone_Deck_Tracker.Enums;
 using System.Windows.Controls;
+using System.Configuration;
 
 namespace DeepBattlerPlugin
 {
@@ -53,7 +54,8 @@ namespace DeepBattlerPlugin
         private CardEntityInfo[] _lastWarband = Array.Empty<CardEntityInfo>();
         private CardEntityInfo[] _lastTavernEntities = Array.Empty<CardEntityInfo>();
         private CardEntityInfo[] _lastHand = Array.Empty<CardEntityInfo>();
-        private readonly string _path = @"E:\DeepBattler\game_state.json";
+        //private readonly string _path = @"E:\DeepBattler\game_state.json";
+        private readonly string _path = ConfigurationManager.AppSettings["game_state_path"];
         //private readonly string _path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Agent", "game_state.json");
         private string _heroName = "Unknown Hero";
         private int _playerHeroId = 0;
