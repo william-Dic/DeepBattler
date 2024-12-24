@@ -53,7 +53,7 @@ namespace DeepBattlerPlugin
         private CardEntityInfo[] _lastWarband = Array.Empty<CardEntityInfo>();
         private CardEntityInfo[] _lastTavernEntities = Array.Empty<CardEntityInfo>();
         private CardEntityInfo[] _lastHand = Array.Empty<CardEntityInfo>();
-        private readonly string _path = @"C:\Users\Guanming Wang\Desktop\DeepBattler\Agent\game_state.json";
+        private readonly string _path = @"E:\DeepBattler\game_state.json";
         //private readonly string _path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Agent", "game_state.json");
         private string _heroName = "Unknown Hero";
         private int _playerHeroId = 0;
