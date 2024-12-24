@@ -4,13 +4,17 @@ import json
 import tempfile
 from playsound import playsound
 from openai import OpenAI
-
+from dotenv import load_dotenv
+load_dotenv()
 class GetAction:
     def __init__(self, api_key, game_state_file='game_state.json', prompt_file='Prompt.txt'):
         self.api_key = api_key
         self.game_state_file = game_state_file
         self.prompt_file = prompt_file
-        self.client = OpenAI(api_key=api_key)
+        self.client = OpenAI(
+            api_key=api_key,
+            base_url=os.getenv("Base_URL")
+            )
         self.system_message = self.get_system_message()
         self.game_state = {}
         self.last_action = ""
@@ -110,7 +114,7 @@ def watch_game_state(api_key, game_state_file, prompt_file):
 
 if __name__ == "__main__":
 
-    api_key = ""
+    api_key = os.getenv('API_KEY') 
     game_state_file = "game_state.json"
     prompt_file = "Prompt.txt"
 
