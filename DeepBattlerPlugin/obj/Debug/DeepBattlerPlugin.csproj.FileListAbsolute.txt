@@ -1,62 +1,11 @@
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.dll.config
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.pdb
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthDb.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthstoneDeckTracker.exe
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\MahApps.Metro.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthMirror.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HSReplay.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\LiveCharts.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\Squirrel.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\NuGet.Squirrel.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\BobsBuddy.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\SharpRaven.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthWatcher.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HtmlAgilityPack.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\De.TorstenMandelkow.MetroChart.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\WPFLocalizeExtension.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\ControlzEx.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\System.Reflection.DispatchProxy.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\untapped-scry-dotnet.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\Splat.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\SharpCompress.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\DeltaCompressionDotNet.MsDelta.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\Mono.Cecil.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\XAMLMarkupExtensions.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\DeltaCompressionDotNet.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthstoneDeckTracker.pdb
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthstoneDeckTracker.exe.config
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\HearthWatcher.pdb
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\de-DE\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\es-ES\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\es-MX\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\fr-FR\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\it-IT\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\ja-JP\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\ko-KR\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\nl-NL\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\pl-PL\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\pt-BR\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\pt-PT\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\ru-RU\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\th-TH\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\uk-UA\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\zh-CN\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\bin\Debug\zh-TW\HearthstoneDeckTracker.resources.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.AssemblyReference.cache
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.CoreCompileInputs.cache
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\obj\Debug\DeepBatt.9EB99A31.Up2Date
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.pdb
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.dll.config
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.pdb
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.AssemblyReference.cache
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.CoreCompileInputs.cache
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBatt.9EB99A31.Up2Date
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.dll
-C:\Users\Guanming Wang\Desktop\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.pdb
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.dll.config
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.dll
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\bin\Debug\DeepBattlerPlugin.pdb
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\bin\Debug\HearthDb.dll
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\bin\Debug\HearthstoneDeckTracker.exe
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.AssemblyReference.cache
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.CoreCompileInputs.cache
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.csproj.CopyComplete
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.dll
+E:\GitHub\yclown\DeepBattler\DeepBattlerPlugin\obj\Debug\DeepBattlerPlugin.pdb
