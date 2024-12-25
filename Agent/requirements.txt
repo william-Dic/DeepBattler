@@ -1,0 +1,3 @@
+openai==1.58.1
+playsound==1.2.2
+python-dotenv==1.0.1
