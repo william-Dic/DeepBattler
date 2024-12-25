@@ -18,6 +18,7 @@ class GetAction:
         self.system_message = self.get_system_message()
         self.game_state = {}
         self.last_action = ""
+        self.language=os.environ.get("Language", "English")
 
     def load_game_state(self):
         try:
@@ -41,7 +42,7 @@ class GetAction:
                 "content": [
                     {
                         "type": "text",
-                        "text": f"{self.system_message}\nGame state:\n{game_state}"
+                        "text": f"{self.system_message}\nGame state:\n{game_state} Please respond in {self.language}"
                     }
                 ]
             }
