@@ -25,81 +25,28 @@ DeepBattler's strength can match that of the **top 0.1% players on EU servers (8
 ## Setup and Configuration  
 
 ### Plugin Setup  
-1. **Open the `DeepBattlerPlugin/DeepBattlerPlugin.csproj` file.**  
-   - Instead of modifying individual class files, ensure your project references are correctly set up in the `.csproj` file.
 
-2. **Add Dependencies:**  
-   To ensure **DeepBattlerPlugin** functions correctly, you only need to add the following two dependencies:
-   
-   1. **HearthDb.dll**
-   2. **HearthstoneDeckTracker.exe**
-
-   #### Adding Dependencies to Your Visual Studio Project
-   
-   Follow these steps to add the two dependencies to your Visual Studio project:
-   
-   1. **Open Your Project**
-      - Open your plugin project in Visual Studio (e.g., `DeepBattlerPlugin`).
-   
-   2. **Add References**
-      - Right-click on the project name and select **"Add"** > **"Reference..."**.
-   
-   3. **Browse and Select Dependencies**
-      - In the **"Reference Manager"** window, select the **"Browse"** tab.
-      - Click the **"Browse"** button and navigate to the directory containing `HearthDb.dll` and `HearthstoneDeckTracker.exe`.
-        - **HearthDb.dll**: Typically located in the HDT installation directory.
-        - **HearthstoneDeckTracker.exe**: Also located in the HDT installation directory.
-      - Select both files and click **"Add"**.
-   
-   4. **Confirm Addition**
-      - After adding, click **"OK"** to confirm the references.
-   
-   #### Setting "Copy Local" Property (Optional)
-   
-   To ensure these dependencies are copied to the output directory during the build process, set their **"Copy Local"** property to **"True"**:
-   
-   1. **Expand References**
-      - In the **"Solution Explorer"**, expand the **"References"** node.
-   
-   2. **Set Properties**
-      - Select the recently added `HearthDb.dll` and `HearthstoneDeckTracker.exe` references.
-      - Right-click each reference and choose **"Properties"**.
-      - In the **Properties** window, set **"Copy Local"** to **"True"**.
-   
-   #### Important Notes
-   
-   - **Compatibility**: Ensure that the versions of `HearthDb.dll` and `HearthstoneDeckTracker.exe` you are using are compatible with your current version of **Hearthstone Deck Tracker (HDT)** to avoid potential compatibility issues.
-   - **Plugin Directory**: After completing the above steps, make sure to place the compiled `DeepBattlerPlugin.dll` into HDT's `Plugins` folder so that HDT can correctly load your plugin.
-
-3. **Configure the Plugin Path**  
-   - Open the `DeepBattlerPlugin/DeepBattlerPlugin.csproj` file.
-   - Set the `_path` variable to your absolute game state file path:
-     ```csharp  
-     private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";  
-     ```  
-
-4. **Build the Plugin**  
-   - Build the plugin. The compiled `DeepBattlerPlugin.dll` will be located under `DeepBattlerPlugin/bin/Debug`.
-
-5. **Install the Plugin in HDT**  
+1. **Install the Plugin in HDT**  
    1. Open Hearthstone Deck Tracker (HDT).
    2. Copy the plugin files to the HDT plugins directory:
       - Default location: `%AppData%\Hearthstone Deck Tracker\Plugins`
-   3. Launch Hearthstone Deck Tracker.
-   4. Enable the plugin in HDT under `Options -> Plugins`.
+   3. Activate the Hearthstone deck tracker.
+   4. Place the Agent/game_ste.json in the HDT directory under Agent/game_ste.json. If there are no files, enabling the plugin will result in an error. Error prompt path.
+   5. Enable plugins under 'Options ->plugins' in HDT.
    
    ![HDT Plugin Setup](https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24)
 
 ### LLM Agent Setup  
-1. **Install the required Python packages:**  
+1. **Enter the Agent folder to install the required Python packages**  
    ```bash  
-   pip install openai playsound==1.2.2  
+   pip install -r requirements.txt
    ```  
-   *Note: Version 1.2.2 of `playsound` is required for compatibility.*  
    
-2. **Add your OpenAI API key in `DeepBattler.py`:**  
+2. **Add your OpenAI API key and Base-URL in `. env `:**  
    ```python  
-   api_key = "your-openai-api-key-here"  
+   API_KEY=
+   Base_URL= https://api.openai.com/v1
+   Language="english"
    ```  
    
 3. **Launch the LLM agent:**  
@@ -167,81 +114,28 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其�
 ## 设置与配置  
 
 ### 插件设置  
-1. **打开 `DeepBattlerPlugin/DeepBattlerPlugin.csproj` 文件。**  
-   - 不再修改单个类文件，而是确保项目引用在 `.csproj` 文件中正确设置。
 
-2. **添加依赖项:**  
-   为了确保 **DeepBattlerPlugin** 正常运行，您仅需添加以下两个依赖项：
-   
-   1. **HearthDb.dll**
-   2. **HearthstoneDeckTracker.exe**
-
-   #### 将依赖项添加到 Visual Studio 项目
-   
-   请按照以下步骤在 Visual Studio 中添加这两个依赖项：
-   
-   1. **打开您的项目**
-      - 在 Visual Studio 中打开您的插件项目（例如，DeepBattlerPlugin）。
-   
-   2. **添加引用**
-      - 右键点击项目名称，选择 **“添加”** > **“引用...”**。
-   
-   3. **浏览并选择依赖项**
-      - 在弹出的 **“引用管理器”** 窗口中，选择 **“浏览”** 选项卡。
-      - 点击 **“浏览”** 按钮，导航到包含 `HearthDb.dll` 和 `HearthstoneDeckTracker.exe` 的目录。
-        - **HearthDb.dll**：通常位于 HDT 的安装目录下。
-        - **HearthstoneDeckTracker.exe**：同样位于 HDT 的安装目录中。
-      - 选择这两个文件后，点击 **“添加”**。
-   
-   4. **确认添加**
-      - 添加完毕后，点击 **“确定”** 以确认引用。
-   
-   #### 设置“复制到本地”属性（可选）
-   
-   为了确保在构建项目时，这些依赖项会被复制到输出目录，您可以设置它们的 **“复制到本地”** 属性：
-   
-   1. **展开引用**
-      - 在 **“解决方案资源管理器”** 中，展开 **“引用”**（**References**）。
-   
-   2. **设置属性**
-      - 选择刚刚添加的 `HearthDb.dll` 和 `HearthstoneDeckTracker.exe` 引用。
-      - 右键点击每个引用，选择 **“属性”**。
-      - 在属性窗口中，将 **“复制到本地”**（**Copy Local**） 设置为 **“True”**。
-   
-   #### 注意事项
-   
-   - **兼容性**：确保您使用的 `HearthDb.dll` 和 `HearthstoneDeckTracker.exe` 版本与您当前的 **Hearthstone Deck Tracker (HDT)** 版本兼容，以避免潜在的兼容性问题。
-   - **插件目录**：完成上述步骤后，确保将编译生成的 `DeepBattlerPlugin.dll` 放置在 HDT 的 `Plugins` 文件夹中，以便 HDT 能够正确加载您的插件。
-
-3. **配置插件路径**  
-   - 打开 `DeepBattlerPlugin/DeepBattlerPlugin.csproj` 文件。
-   - 将 `_path` 变量设置为你的 `game_state.json` 的绝对路径：
-     ```csharp  
-     private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";  
-     ```  
-
-4. **构建插件**  
-   - 构建插件。编译后的 `DeepBattlerPlugin.dll` 位于 `DeepBattlerPlugin/bin/Debug` 目录下。
-
-5. **安装插件到HDT**  
+1. **安装插件到HDT**  
    1. 打开《炉石传说》卡组跟踪器（HDT）。
-   2. 将插件文件复制到HDT的插件目录：
+   2. 将下载DeepBattlerPlugin.dll文件复制到HDT的插件目录：
       - 默认位置：`%AppData%\Hearthstone Deck Tracker\Plugins`
    3. 启动《炉石传说》卡组跟踪器。
-   4. 在HDT的 `选项 -> 插件` 下启用插件。
-   
+   4. 将Agent/game_state.json，放到HDT目录下Agent/game_state.json。若无文件，启用插件会报错。报错提示路径。
+   5. 在HDT的 `选项 -> 插件` 下启用插件。 
    ![HDT插件设置](https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24)
 
 ### LLM代理设置  
-1. **安装所需的Python包：**  
+1. **进入Agent文件夹 装所需的Python包：**  
    ```bash  
-   pip install openai playsound==1.2.2  
+   pip install -r requirements.txt
    ```  
    *注意：需要兼容性，请使用 `playsound` 的1.2.2版本。*  
    
-2. **在 `DeepBattler.py` 中添加你的OpenAI API密钥：**  
+2. **在 `.env` 中添加你的OpenAI API密钥 和Base_URL：**  
    ```python  
-   api_key = "your-openai-api-key-here"  
+   API_KEY=
+   Base_URL=https://api.openai.com/v1
+   Language="english"
    ```  
    
 3. **启动LLM代理：**  
@@ -307,81 +201,27 @@ DeepBattlerの実力は**EUサーバーの上位0.1%のプレイヤーに匹敵�
 ## セットアップと構成  
 
 ### プラグインセットアップ  
-1. **`DeepBattlerPlugin/DeepBattlerPlugin.csproj` ファイルを開きます。**  
-   - 個々のクラスファイルを変更する代わりに、`.csproj` ファイル内でプロジェクトの参照が正しく設定されていることを確認してください。
-
-2. **依存関係を追加する:**  
-   **DeepBattlerPlugin** が正しく機能するために、以下の2つの依存関係を追加する必要があります：
-   
-   1. **HearthDb.dll**
-   2. **HearthstoneDeckTracker.exe**
-
-   #### Visual Studio プロジェクトに依存関係を追加する方法
-   
-   以下の手順に従って、Visual Studio プロジェクトにこれらの依存関係を追加してください：
-   
-   1. **プロジェクトを開く**
-      - Visual Studio でプラグインプロジェクト（例：DeepBattlerPlugin）を開きます。
-   
-   2. **参照を追加する**
-      - プロジェクト名を右クリックし、**「追加」** > **「参照...」** を選択します。
-   
-   3. **依存関係をブラウズして選択する**
-      - ポップアップした **「参照マネージャー」** ウィンドウで、**「ブラウズ」** タブを選択します。
-      - **「ブラウズ」** ボタンをクリックし、`HearthDb.dll` と `HearthstoneDeckTracker.exe` が含まれるディレクトリに移動します。
-        - **HearthDb.dll**：通常、HDTのインストールディレクトリにあります。
-        - **HearthstoneDeckTracker.exe**：同様に、HDTのインストールディレクトリにあります。
-      - 両方のファイルを選択し、**「追加」** をクリックします。
-   
-   4. **追加を確認する**
-      - 追加が完了したら、**「OK」** をクリックして参照を確認します。
-   
-   #### 「コピー ローカル」プロパティの設定（オプション）
-   
-   ビルドプロセス中にこれらの依存関係が出力ディレクトリにコピーされるようにするために、**「コピー ローカル」** プロパティを **「True」** に設定します：
-   
-   1. **参照を展開する**
-      - **「ソリューションエクスプローラー」** で、**「参照」**（**References**）ノードを展開します。
-   
-   2. **プロパティを設定する**
-      - 追加した `HearthDb.dll` と `HearthstoneDeckTracker.exe` の参照を選択します。
-      - 各参照を右クリックし、**「プロパティ」** を選択します。
-      - **プロパティウィンドウ**で、**「コピー ローカル」**（**Copy Local**） を **「True」** に設定します。
-   
-   #### 注意事項
-   
-   - **互換性**：使用している `HearthDb.dll` と `HearthstoneDeckTracker.exe` のバージョンが現在の **Hearthstone Deck Tracker (HDT)** のバージョンと互換性があることを確認してください。互換性の問題を避けるためです。
-   - **プラグインディレクトリ**：上記の手順を完了した後、コンパイルされた `DeepBattlerPlugin.dll` を HDT の `Plugins` フォルダに配置し、HDT がプラグインを正しくロードできるようにしてください。
-
-3. **プラグインパスの設定**  
-   - `DeepBattlerPlugin/DeepBattlerPlugin.csproj` ファイルを開きます。
-   - `_path` 変数をあなたの `game_state.json` の絶対パスに設定します：
-     ```csharp  
-     private readonly string _path = @"C:\Your\Absolute\Path\To\game_state.json";  
-     ```  
-
-4. **プラグインをビルドする**  
-   - プラグインをビルドします。コンパイルされた `DeepBattlerPlugin.dll` は `DeepBattlerPlugin/bin/Debug` に配置されます。
-
-5. **HDTへのプラグインのインストール**  
+1. **HDTへのプラグインのインストール**  
    1. 『ハースストーン』デックトラッカー（HDT）を開きます。
    2. プラグインファイルをHDTのプラグインディレクトリにコピーします：
       - デフォルトの場所：`%AppData%\Hearthstone Deck Tracker\Plugins`
    3. 『ハースストーン』デックトラッカーを起動します。
-   4. HDTの `オプション -> プラグイン` でプラグインを有効にします。
+   4.Agent/game_state.jsonを、HDTディレクトリの下のAgent/game_state.jsonに配置します。ファイルがない場合は、プラグインを有効にするとエラーが発生します。プロンプトパスをエラーしました。
+   5. HDTの `オプション -> プラグイン` でプラグインを有効にします。
    
    ![HDTプラグイン設定](https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24)
 
 ### LLMエージェントセットアップ  
 1. **必要なPythonパッケージをインストールします：**  
    ```bash  
-   pip install openai playsound==1.2.2  
+   pip install -r requirements.txt
    ```  
-   *注意：互換性のため、`playsound` のバージョン1.2.2が必要です。*  
    
-2. **`DeepBattler.py` にOpenAI APIキーを追加します：**  
+2. **OpenAI APIキーとBase _ URLを`.env `に追加する：**  
    ```python  
-   api_key = "your-openai-api-key-here"  
+   API_KEY=
+   Base_URL=https://api.openai.com/v1
+   Language="Japanese" 
    ```  
    
 3. **LLMエージェントを起動します：**  
