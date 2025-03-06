@@ -6,9 +6,9 @@
 
 DeepBattler, a LLM-Driven Hearthstone Battlegrounds enthusiast like us. DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game experience, DeepBattler has got your back!
 
-Demos can be found here! [YouTube Link](https://www.youtube.com/watch?v=A9XKPx1COfc&t=66s)
-
 DeepBattler's strength can match that of the **top 0.1% players on EU servers (8K ELO)**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
+
+*Demos can be found here! [YouTube Link](https://www.youtube.com/watch?v=A9XKPx1COfc&t=66s)*
 
 ## System Components  
 
