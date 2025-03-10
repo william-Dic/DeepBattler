@@ -400,22 +400,57 @@ DeepBattlerの実力は**EUサーバーの上位0.1%のプレイヤーに匹敵�
    
    ![HDTプラグイン設定](https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24)
 
-### LLMエージェントセットアップ  
-1. **必要なPythonパッケージをインストールします：**  
-   ```bash  
-   pip install openai playsound==1.2.2  
-   ```  
-   *注意：互換性のため、`playsound` のバージョン1.2.2が必要です。*  
-   
-2. **`DeepBattler.py` にOpenAI APIキーを追加します：**  
-   ```python  
-   api_key = "your-openai-api-key-here"  
-   ```  
-   
-3. **LLMエージェントを起動します：**  
-   ```bash  
-   python DeepBattler.py  
-   ```  
+### LLMエージェントのセットアップ
+
+## OpenAI GPTを使用する場合
+
+1. **必要なPythonパッケージをインストールします:**
+```bash
+pip install openai playsound==1.2.2
+```
+*注意：互換性のため、`playsound`のバージョンは必ず`1.2.2`を使用してください。*
+
+2. **OpenAIのAPIキーを`Openai_caller.py`に設定します:**
+```python
+api_key = "your-openai-api-key-here"
+```
+
+3. **LLMエージェントを起動します:**
+```bash
+python Openai_caller.py
+```
+
+---
+
+## Google Gemmaのセットアップ方法
+
+Gemmaを使ったLLMエージェントの設定および起動方法は以下の通りです。
+
+1. **必要なPythonパッケージをインストールします:**
+```bash
+pip install keras_hub jax keras gtts playsound==1.2.2
+```
+*注意：playsoundは互換性のため必ずバージョン1.2.2を使用してください。*
+
+2. **Gemma用の環境を設定します:**  
+スクリプト（`Gemma_caller.py`）に以下の環境設定を含めてください:
+```python
+import os
+
+os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "1.00"
+os.environ["KERAS_BACKEND"] = "jax"
+```
+
+3. **Gemma用の必要ファイルを準備します:**  
+以下のファイルが必要です:
+
+- `game_state.json`：リアルタイムのゲーム状態データ（JSON形式）
+- `Prompt.txt`：Gemmaのシステムプロンプトを記載したテキストファイル
+
+4. **Gemmaエージェントを起動します:**
+```bash
+python Gemma_caller.py
+```
 
 #### 「コピー ローカル」プロパティの設定（オプション）
 
