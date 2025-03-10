@@ -1,21 +1,27 @@
-import time
 import os
 import json
+import time
 import tempfile
 from playsound import playsound
-from openai import OpenAI
+import keras_hub
+import keras
+
+# Set up Keras backend
+os.environ["KERAS_BACKEND"] = "jax"
+os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "1.00"
+
+# Load Gemma Model
+model_name = "gemma2_instruct_2b_en"
+gemma_lm = keras_hub.models.GemmaCausalLM.from_preset(model_name)
 
 class GetAction:
-    def __init__(self, api_key, game_state_file='game_state.json', prompt_file='Prompt.txt'):
-        self.api_key = api_key
+    def __init__(self, game_state_file='game_state.json', prompt_file='Prompt.txt'):
         self.game_state_file = game_state_file
         self.prompt_file = prompt_file
-        self.client = OpenAI(api_key=api_key)
         self.system_message = self.get_system_message()
-        self.game_state = {}
-        self.last_action = ""
 
     def load_game_state(self):
+        """Load game state from JSON file."""
         try:
             with open(self.game_state_file, 'r', encoding='utf-8') as file:
                 return json.load(file)
@@ -23,6 +29,7 @@ class GetAction:
             return {}
 
     def get_system_message(self):
+        """Retrieve system prompt from the Prompt.txt file."""
         try:
             with open(self.prompt_file, 'r', encoding='utf-8') as file:
                 return file.read().strip()
@@ -31,38 +38,28 @@ class GetAction:
             return "Default system message: Please provide a valid Prompt.txt file."
 
     def get_action(self, game_state):
-        messages = [
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": f"{self.system_message}\nGame state:\n{game_state}"
-                    }
-                ]
-            }
-        ]
-        response = self.client.chat.completions.create(
-            model="o1-mini", 
-            messages=messages,
-        )
-        return response.choices[0].message.content.strip()
+        """Generate action using the Gemma model."""
+        input_text = f"{self.system_message}\nGame state:\n{json.dumps(game_state, indent=2)}"
+        
+        # Tokenize and run inference with Gemma
+        tokenized = gemma_lm.tokenizer(input_text, return_tensors="np")
+        output_tokens = gemma_lm.generate(tokenized["input_ids"], max_length=150)
+        action_text = gemma_lm.tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+
+        return action_text.strip()
 
     def speak_action(self, action_text):
+        """Text-to-Speech function to vocalize the generated action."""
         if not action_text:
             return
 
         fd, temp_mp3_path = tempfile.mkstemp(suffix=".mp3", prefix="DeepBattler_")
-        os.close(fd)  
+        os.close(fd)
 
         try:
-            r = self.client.audio.speech.create(
-                model="tts-1", 
-                voice="echo",
-                input=action_text,
-            )
-            r.stream_to_file(temp_mp3_path)
-
+            from gtts import gTTS
+            tts = gTTS(text=action_text, lang="en")
+            tts.save(temp_mp3_path)
             playsound(temp_mp3_path)
         except Exception as e:
             print(f"[Error in speak_action] {e}")
@@ -70,8 +67,9 @@ class GetAction:
             if os.path.exists(temp_mp3_path):
                 os.remove(temp_mp3_path)
 
-def watch_game_state(api_key, game_state_file, prompt_file):
-    action_instance = GetAction(api_key, game_state_file, prompt_file)
+def watch_game_state(game_state_file, prompt_file):
+    """Monitors changes in game state and generates responses accordingly."""
+    action_instance = GetAction(game_state_file, prompt_file)
     
     last_mtime = os.path.getmtime(game_state_file) if os.path.exists(game_state_file) else None
 
@@ -100,7 +98,7 @@ def watch_game_state(api_key, game_state_file, prompt_file):
 
             coins = new_game_state.get("Coins", 0)
             if coins == 0:
-                print("[watcher] Coins=0, skip calling OpenAI.")
+                print("[watcher] Coins=0, skipping Gemma response.")
                 continue
 
             new_action = action_instance.get_action(new_game_state)
@@ -109,12 +107,7 @@ def watch_game_state(api_key, game_state_file, prompt_file):
                 action_instance.speak_action(new_action)
 
 if __name__ == "__main__":
-
-    api_key = ""
     game_state_file = "game_state.json"
     prompt_file = "Prompt.txt"
-
-    if not api_key:
-        print("Error: The OPENAI_API_KEY environment variable is not set.")
-    else:
-        watch_game_state(api_key, game_state_file, prompt_file)
+    
+    watch_game_state(game_state_file, prompt_file)
