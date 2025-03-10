@@ -93,23 +93,49 @@ DeepBattler's strength can match that of the **top 0.1% players on EU servers (8
    ![HDT Plugin Setup](https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24)
 
 ### LLM Agent Setup  
+
+#### Using OpenAI GPT  
 1. **Install the required Python packages:**  
    ```bash  
    pip install openai playsound==1.2.2  
    ```  
    *Note: Version 1.2.2 of `playsound` is required for compatibility.*  
    
-2. **Add your OpenAI API key in `DeepBattler.py`:**  
+2. **Add your OpenAI API key in `Openai_caller.py`:**  
    ```python  
    api_key = "your-openai-api-key-here"  
    ```  
    
 3. **Launch the LLM agent:**  
    ```bash  
-   python DeepBattler.py  
+   python Openai_caller.py
    ```  
 
 ---
+
+#### Using Google Gemma  
+1. **Install the required Python packages:**  
+   ```bash  
+   pip install keras_hub jax keras gtts playsound==1.2.2
+   ```  
+   *Note: Version 1.2.2 of `playsound` is required for compatibility.*  
+
+2. **Set up the Gemma environment:**  
+   Your script (`Gemma_caller.py`) includes the following environment configurations:
+   ```python
+   import os
+   os.environ["KERAS_BACKEND"] = "jax"
+   os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"] = "1.00"
+   ```
+
+3. **Prepare the necessary files:**
+   - `game_state.json`: A JSON file to provide the current game state.
+   - `Prompt.txt`: A text file containing the system prompt for Gemma.
+
+4. **Run the Gemma agent:**
+   ```bash
+   python Gemma_caller.py
+   ```
 
 ## Custom Non-Commercial License  
 
