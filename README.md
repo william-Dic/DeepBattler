@@ -2,7 +2,7 @@
 
 **[English](#english)** | **[中文](#chinese)** | **[日本語](#japanese)**
 
-## [Update: We are trying using GRPO to train a new SOTA RL Policy, check the other branch!]
+## [❗❗❗Update: We are trying using GRPO to train a new SOTA RL Policy, check the other branch!]
 
 ### Well met, hero! I'm DeepBattler, the tavern master who brews brilliant plays, belly laughs, and more pep than a dancing Murloc on espresso! 🍻🐟
 
