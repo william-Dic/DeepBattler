@@ -1,4 +1,4 @@
-# [❗Update: We are using GRPO to train a new SOTA RL Policy, check the other branch to get more details]
+# [❗Update: We are using GRPO to train a new SOTA RL Policy for Hearthstone Batlleground, check the other branch to get more details]
 ---
 # DeepBattler - Your BEST LLM Battlegrounds Coach/Friend！🍻🍻 <a id="english"></a>
 
