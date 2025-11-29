@@ -9,6 +9,7 @@ using Hearthstone_Deck_Tracker.Plugins;
 using HearthDb.Enums;
 using Hearthstone_Deck_Tracker.Enums;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace DeepBattlerPlugin
 {
@@ -58,7 +59,7 @@ namespace DeepBattlerPlugin
         public string Description => "Track BG state with simplified logic";
         public string ButtonText => "Do Nothing";
         public string Author => "Guanming";
-        public Version Version => new Version(2, 0, 5);
+        public Version Version => new Version(2, 1, 0);
         public MenuItem MenuItem => null;
 
         private bool _isPlayerTurnStarted = false;
@@ -75,9 +76,11 @@ namespace DeepBattlerPlugin
         private readonly string _path = @"C:\Users\Guanming Wang\Desktop\DeepBattler\Agent\game_state.json";
         private readonly string _historyPath = @"C:\Users\Guanming Wang\Desktop\DeepBattler\Agent\game_history.json";
         private readonly string _resourcesRoot = @"C:\Users\Guanming Wang\Desktop\DeepBattler\Agent\resources";
+        private readonly string _latestGameStatePath = @"C:\Users\Guanming Wang\Desktop\DeepBattler\Agent\real_time_caller\latest_game_state.json";
         //private readonly string _path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Agent", "game_state.json");
         //private readonly string _historyPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Agent", "game_history.json");
         //private readonly string _resourcesRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Agent", "resources");
+        private AgentOutputWindow _agentOutputWindow;
         private string _heroName = "Unknown Hero";
         private int _playerHeroId = 0;
         private int _currentTurn = 0;
@@ -93,9 +96,60 @@ namespace DeepBattlerPlugin
             GameEvents.OnTurnStart.Add(OnTurnStart);
             GameEvents.OnGameEnd.Add(OnGameEnd);
             GameEvents.OnInMenu.Add(OnInMenu);
+            
+            // Create and show agent output window
+            try
+            {
+                if (Application.Current != null)
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _agentOutputWindow = new AgentOutputWindow();
+                        _agentOutputWindow.Show();
+                    });
+                }
+                else
+                {
+                    // Fallback: create on a new thread with new Application
+                    System.Threading.Thread thread = new System.Threading.Thread(() =>
+                    {
+                        var app = new Application();
+                        app.Dispatcher.Invoke(() =>
+                        {
+                            _agentOutputWindow = new AgentOutputWindow();
+                            _agentOutputWindow.Show();
+                        });
+                        app.Run();
+                    });
+                    thread.SetApartmentState(System.Threading.ApartmentState.STA);
+                    thread.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log error but don't crash plugin
+                System.Diagnostics.Debug.WriteLine($"Error creating agent output window: {ex.Message}");
+            }
         }
 
-        public void OnUnload() { }
+        public void OnUnload()
+        {
+            // Close agent output window
+            try
+            {
+                if (Application.Current != null)
+                {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        _agentOutputWindow?.Close();
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error closing agent output window: {ex.Message}");
+            }
+        }
         public void OnButtonPress() { }
 
         private bool IsInRecruitmentPhase()
@@ -122,6 +176,10 @@ namespace DeepBattlerPlugin
 
         public void OnUpdate()
         {
+            // Skip updates during hero selection phase
+            if (IsHeroSelectionPhase())
+                return;
+
             if (_heroName == "Unknown Hero" || _heroName.StartsWith("BaconPHhero"))
                 UpdateHeroName();
             if (_isPlayerTurnStarted)
@@ -163,7 +221,7 @@ namespace DeepBattlerPlugin
             InitializeResourcesFolder();
             CurrentPhase = GamePhaseEnum.StartGame;
             _currentTavernUpgradeCost = null;
-            UpdateGameState(true);
+            // Don't update game state at game start - wait until hero is selected
         }
 
         private void OnGameEnd()
@@ -315,6 +373,22 @@ namespace DeepBattlerPlugin
             if (heroEntity == null || playerEntity == null)
                 return "{}";
 
+            // Get hero name directly from the game entity to ensure it's always up-to-date
+            string currentHeroName = _heroName; // Default to cached value
+            var heroCardId = heroEntity.CardId;
+            if (heroCardId != null && HearthDb.Cards.All.TryGetValue(heroCardId, out var foundHeroCard))
+            {
+                if (!string.IsNullOrEmpty(foundHeroCard.Name) && !foundHeroCard.Name.StartsWith("BaconPHhero"))
+                {
+                    currentHeroName = foundHeroCard.Name;
+                    // Update cached value for consistency
+                    if (_heroName != currentHeroName)
+                    {
+                        _heroName = currentHeroName;
+                    }
+                }
+            }
+
             var playerId = playerEntity.GetTag(GameTag.PLAYER_ID);
             var heroPowerEntity = Core.Game.Entities.Values.FirstOrDefault(e =>
                 e.GetTag(GameTag.CONTROLLER) == playerId &&
@@ -352,7 +426,7 @@ namespace DeepBattlerPlugin
             return BuildGameStateJson(
                 _currentTurn,
                 CurrentPhase,
-                _heroName,
+                currentHeroName,
                 actualHealth,
                 availableCoins,
                 tavernUpgradeCostStr,
@@ -485,6 +559,19 @@ namespace DeepBattlerPlugin
 
             if (!forceWrite && CurrentPhase != GamePhaseEnum.StartGame && !IsInRecruitmentPhase())
                 return;
+            
+            // Update hero name if needed
+            if (_heroName == "Unknown Hero" || _heroName.StartsWith("BaconPHhero"))
+            {
+                var heroCardId = heroEntity.CardId;
+                if (heroCardId != null && HearthDb.Cards.All.TryGetValue(heroCardId, out var foundHeroCard))
+                {
+                    if (!string.IsNullOrEmpty(foundHeroCard.Name) && !foundHeroCard.Name.StartsWith("BaconPHhero"))
+                    {
+                        _heroName = foundHeroCard.Name;
+                    }
+                }
+            }
             var playerId = playerEntity.GetTag(GameTag.PLAYER_ID);
             var heroPowerEntity = Core.Game.Entities.Values.FirstOrDefault(e =>
                 e.GetTag(GameTag.CONTROLLER) == playerId &&
@@ -751,6 +838,23 @@ namespace DeepBattlerPlugin
                 var folder = GetTurnFolderPath(turnNumber);
                 Directory.CreateDirectory(folder);
                 File.WriteAllText(Path.Combine(folder, "game_state.json"), json);
+                
+                // Also write to latest_game_state.json for real-time caller
+                try
+                {
+                    var latestDir = Path.GetDirectoryName(_latestGameStatePath);
+                    if (!string.IsNullOrEmpty(latestDir))
+                    {
+                        Directory.CreateDirectory(latestDir);
+                    }
+                    // Use UTF8Encoding without BOM to avoid BOM issues in Python
+                    var utf8NoBom = new System.Text.UTF8Encoding(false);
+                    File.WriteAllText(_latestGameStatePath, json, utf8NoBom);
+                }
+                catch (Exception)
+                {
+                    // ignore latest_game_state.json write failures
+                }
             }
             catch (Exception)
             {
@@ -891,9 +995,8 @@ namespace DeepBattlerPlugin
 
             var playerId = playerEntity.GetTag(GameTag.PLAYER_ID);
             
-            // In Battlegrounds hero selection, available heroes are ONLY in HAND zone
-            // We should ONLY look at HAND zone - other zones contain other players' heroes
-            var handHeroes = Core.Game.Player?.Hand?
+            // Get ALL heroes from HAND zone first (these are the selection candidates)
+            var allHandHeroes = Core.Game.Player?.Hand?
                 .Where(e =>
                     e.GetTag(GameTag.CARDTYPE) == (int)CardType.HERO &&
                     e.Card != null &&
@@ -901,15 +1004,54 @@ namespace DeepBattlerPlugin
                     !IsPlaceholderHero(e))
                 .ToList() ?? new List<Entity>();
 
-            if (handHeroes.Count == 0)
+            // If we have heroes in hand, try to identify which ones are selectable
+            // In Battlegrounds, typically 4 heroes are shown, but player can only pick 2
+            // The selectable ones might have specific tags or be in a specific order
+            
+            // Strategy: Get all heroes, but prioritize those that are NOT already selected
+            // Check if hero is in PLAY zone (already selected) - exclude those
+            var selectableHeroes = allHandHeroes
+                .Where(e => 
+                {
+                    var zone = e.GetTag(GameTag.ZONE);
+                    // Exclude heroes already in PLAY zone (selected)
+                    return zone != (int)Zone.PLAY;
+                })
+                .ToList();
+
+            // If we still have issues, get all heroes from hand and let the logic filter
+            if (selectableHeroes.Count == 0 && allHandHeroes.Count > 0)
+            {
+                selectableHeroes = allHandHeroes;
+            }
+
+            // Also check SETASIDE for additional heroes that might be selectable
+            // But be more careful - only get those controlled by player
+            var setAsideHeroes = Core.Game.Entities.Values
+                .Where(e =>
+                    e.GetTag(GameTag.CARDTYPE) == (int)CardType.HERO &&
+                    e.GetTag(GameTag.ZONE) == (int)Zone.SETASIDE &&
+                    e.GetTag(GameTag.CONTROLLER) == playerId &&
+                    e.Card != null &&
+                    !string.IsNullOrEmpty(e.Card.Name) &&
+                    !IsPlaceholderHero(e) &&
+                    e.GetTag(GameTag.ZONE) != (int)Zone.PLAY)
+                .ToList();
+
+            // Combine and get unique heroes
+            var allSelectableHeroes = selectableHeroes
+                .Concat(setAsideHeroes)
+                .GroupBy(e => e.Card.Name)
+                .Select(g => g.First())
+                .ToList();
+
+            if (allSelectableHeroes.Count == 0)
                 return Array.Empty<HeroChoiceInfo>();
 
             // Get hero descriptions from HearthDb if card.Text is empty
-            var heroChoices = handHeroes
-                .GroupBy(e => e.Card.Name)
-                .Select(g =>
+            var heroChoices = allSelectableHeroes
+                .Select(entity =>
                 {
-                    var entity = g.First();
                     var card = entity.Card;
                     var description = CleanCardText(card.Text);
                     
@@ -932,8 +1074,7 @@ namespace DeepBattlerPlugin
                                  !choice.Name.StartsWith("BaconPHhero", StringComparison.OrdinalIgnoreCase) &&
                                  !choice.Name.Equals("BaconPHhero", StringComparison.OrdinalIgnoreCase))
                 .OrderBy(choice => choice.Name)
-                .Take(2)
-                .ToArray();
+                .ToArray(); // Return ALL heroes, not just 2
 
             return heroChoices;
         }
