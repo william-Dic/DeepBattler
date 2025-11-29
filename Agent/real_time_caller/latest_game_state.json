@@ -1,0 +1,82 @@
+{
+  "game_state": {
+    "turn_number": 7,
+    "phase": "PlayerTurn"
+  },
+  "player_hero": {
+    "name": "Nozdormu",
+    "current_health": 15,
+    "hero_power": {
+      "description": "Passive Your first Refresh each turn costs (0).",
+      "cost": 0
+    }
+  },
+  "resources": {
+    "available_gold": 0,
+    "tavern_tier": 4,
+    "tavern_upgrade_cost": "10"
+  },
+  "board_state": {
+    "warband_size": 1,
+    "warband": [
+      {
+        "name": "Saltscale Honcho",
+        "attack": 11,
+        "health": 8,
+        "description": "After you play a Murloc, give a friendly Murloc other than it +2 Health.",
+        "race": "Murloc",
+        "tier": 2
+      }
+    ],
+    "hand_size": 3,
+    "hand": [
+      {
+        "name": "The Goldenizer",
+        "description": "Make a friendly minion Golden."
+      },
+      {
+        "name": "Blood Gem",
+        "description": "Give a minion +{0}/+{1}."
+      },
+      {
+        "name": "Blood Gem",
+        "description": "Give a minion +{0}/+{1}."
+      }
+    ],
+    "tavern_available": 4,
+    "tavern_entities": [
+      {
+        "name": "Jelly Belly",
+        "attack": 2,
+        "health": 3,
+        "description": "After a friendly minion is Reborn, gain +2/+3 permanently.",
+        "race": "Undead",
+        "tier": 3
+      },
+      {
+        "name": "Goldgrubber",
+        "attack": 3,
+        "health": 2,
+        "description": "At the end of your turn, gain +{0}/+{1} for each   friendly Golden minion.",
+        "race": "Pirate",
+        "tier": 3
+      },
+      {
+        "name": "Tad",
+        "attack": 2,
+        "health": 2,
+        "description": "When you sell this, get a random Murloc.",
+        "race": "Murloc",
+        "tier": 2
+      },
+      {
+        "name": "Tusked Camper",
+        "attack": 2,
+        "health": 3,
+        "description": "Rally: Play a Blood Gem on this.",
+        "race": "Quilboar",
+        "tier": 1
+      }
+    ]
+  }
+}

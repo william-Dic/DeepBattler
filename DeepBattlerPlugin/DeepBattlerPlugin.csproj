@@ -32,11 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HearthDb">
-      <HintPath>..\..\..\..\AppData\Local\HearthstoneDeckTracker\app-1.37.5\HearthDb.dll</HintPath>
+    <Reference Include="HearthDb, Version=31.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\HDT-V2.3.9\HDT\HearthDb.dll</HintPath>
     </Reference>
-    <Reference Include="HearthstoneDeckTracker">
-      <HintPath>..\..\..\..\AppData\Local\HearthstoneDeckTracker\app-1.37.5\HearthstoneDeckTracker.exe</HintPath>
+    <Reference Include="HearthstoneDeckTracker, Version=1.37.5.6952, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\HDT-V2.3.9\HDT\HearthstoneDeckTracker.exe</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -60,4 +62,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild" Condition="'$(Configuration)' == 'Debug'">
+    <PropertyGroup>
+      <HDTPluginsPath>E:\HDT-V2.3.9\HDT\Plugins</HDTPluginsPath>
+    </PropertyGroup>
+    <MakeDir Directories="$(HDTPluginsPath)" Condition="!Exists('$(HDTPluginsPath)')" />
+    <Copy SourceFiles="$(OutDir)$(TargetFileName)" DestinationFolder="$(HDTPluginsPath)" SkipUnchangedFiles="false" />
+    <Message Text="Successfully copied $(TargetFileName) to $(HDTPluginsPath)" Importance="high" />
+  </Target>
 </Project>

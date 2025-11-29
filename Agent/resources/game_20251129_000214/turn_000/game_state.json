@@ -1,0 +1,30 @@
+{
+  "game_state": {
+    "turn_number": 0,
+    "phase": "StartGame"
+  },
+  "player_hero": {
+    "name": "Unknown Hero",
+    "current_health": 30,
+    "hero_power": {
+      "description": "",
+      "cost": 0
+    }
+  },
+  "resources": {
+    "available_gold": 0,
+    "tavern_tier": 1,
+    "tavern_upgrade_cost": "undefined"
+  },
+  "board_state": {
+    "warband_size": 0,
+    "warband": [],
+    "hand_size": 0,
+    "hand": [],
+    "tavern_available": 0,
+    "tavern_entities": []
+  },
+  "hero_selection": {
+    "available": [ { "name": "A. F. Kay", "description": "" }, { "name": "Farseer Nobundo", "description": "" } ]
+  }
+}
