@@ -8,7 +8,7 @@ DeepBattler, a LLM-Driven Hearthstone Battlegrounds enthusiast like us. DeepBatt
 
 DeepBattler's strength can match that of the **top 0.1% players on EU servers (8K ELO)**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let's take your gameplay to the next level!
 
-**Demos can be found here! [YouTube Link](https://www.youtube.com/watch?v=A9XKPx1COfc&t=66s)**
+**Demos can be found here! [YouTube Link](https://drive.google.com/file/d/1DY8hDdvVe-Iw7zKItOB1B-rvaf87l_Jc/view?usp=sharing)**
 
 ## ✨ New Features
 
