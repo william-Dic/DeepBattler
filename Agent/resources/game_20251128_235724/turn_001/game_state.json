@@ -1,0 +1,67 @@
+{
+  "game_state": {
+    "turn_number": 1,
+    "phase": "PlayerTurn"
+  },
+  "player_hero": {
+    "name": "Snake Eyes",
+    "current_health": 30,
+    "hero_power": {
+      "description": "Roll a 6-sided die. Gain that much Gold. (Cannot be used again for that many turns!)",
+      "cost": 1
+    }
+  },
+  "resources": {
+    "available_gold": 3,
+    "tavern_tier": 1,
+    "tavern_upgrade_cost": "5"
+  },
+  "board_state": {
+    "warband_size": 1,
+    "warband": [
+      {
+        "name": "Patient Scout",
+        "attack": 2,
+        "health": 2,
+        "description": "When you sell this, Discover two Tier 1 minions. (Upgrades each turn!)",
+        "race": "",
+        "tier": 2
+      }
+    ],
+    "hand_size": 0,
+    "hand": [],
+    "tavern_available": 4,
+    "tavern_entities": [
+      {
+        "name": "Ominous Seer",
+        "attack": 2,
+        "health": 1,
+        "description": "Battlecry: The next Tavern spell you buy costs (1) less.",
+        "race": "Naga",
+        "tier": 1
+      },
+      {
+        "name": "Aureate Laureate",
+        "attack": 1,
+        "health": 1,
+        "description": "Divine Shield Battlecry: Make this minion Golden.",
+        "race": "Pirate",
+        "tier": 1
+      },
+      {
+        "name": "Annoy-o-Tron",
+        "attack": 1,
+        "health": 2,
+        "description": "Taunt Divine Shield",
+        "race": "Mech",
+        "tier": 1
+      },
+      {
+        "name": "Tavern Dish Banana",
+        "type": "tavern_spell",
+        "description": "Give a minion +{0}/+{1}.",
+        "tier": 1
+      }
+    ]
+  }
+}

@@ -1,5 +1,3 @@
-# [❗Update: We are using GRPO to train a new SOTA RL Policy for Hearthstone Batlleground, check the other branch to get more details]
----
 # DeepBattler - Your BEST LLM Battlegrounds Coach/Friend！🍻🍻 <a id="english"></a>
 
 **[English](#english)** | **[中文](#chinese)** | **[日本語](#japanese)**
@@ -8,23 +6,59 @@
 
 DeepBattler, a LLM-Driven Hearthstone Battlegrounds enthusiast like us. DeepBattler seamlessly integrates with the Hearthstone Deck Tracker (HDT) plugin to provide you with **real-time strategic advice**. Whether you're aiming to climb the ranks or just improve your game experience, DeepBattler has got your back!
 
-DeepBattler's strength can match that of the **top 0.1% players on EU servers (8K ELO)**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let’s take your gameplay to the next level!
+DeepBattler's strength can match that of the **top 0.1% players on EU servers (8K ELO)**, thanks to its insightful, voice-assisted guidance that helps you make the best decisions on the fly. Let's take your gameplay to the next level!
 
 **Demos can be found here! [YouTube Link](https://www.youtube.com/watch?v=A9XKPx1COfc&t=66s)**
 
+## ✨ New Features
+
+### 🎯 Real-Time Visual Suggestion Window
+- **In-Game Overlay**: A beautiful floating window displays DeepBattler's strategic suggestions directly in your game interface
+- **Live Updates**: Suggestions update in real-time as the game state changes
+- **Clear Formatting**: Easy-to-read bullet points with larger, clearer fonts
+- **Position Control**: Draggable window that stays in your preferred location (default: bottom-left corner)
+
+### 🎤 Voice + Text Dual Output
+- **Voice Interaction**: Natural voice conversation using Google Gemini Live API
+- **Text Display**: Simultaneous text output using Gemini 2.5 Flash Lite for visual reference
+- **Parallel Processing**: Audio and text responses generated simultaneously for the best of both worlds
+- **Smart Updates**: Text suggestions automatically refresh with each agent response
+
+### 🔄 Dynamic Game State Integration
+- **Auto-Detection**: Automatically detects when a game starts and adapts accordingly
+- **Real-Time Monitoring**: Continuously monitors game state changes and updates system prompts
+- **Casual Chat Mode**: When no game is active, DeepBattler switches to friendly conversation mode
+- **Seamless Transitions**: Smoothly transitions between game mode and chat mode
+
 ## System Components  
 
-### 1. Hearthstone Deck Tracker (HDT) Plugin  
-- **Real-Time Monitoring:** Keeps track of your game state as it happens  
-- **JSON Outputs:** Provides clear, structured data  
-- **Efficient Data Handling:** Ensures smooth performance  
-- **In-Depth Insights:** Offers comprehensive analysis of your gameplay  
+### 1. Hearthstone Deck Tracker (HDT) Plugin - Real-Time Data Collection API  
+The DeepBattler Plugin serves as a **real-time API endpoint for Battleground Board data**, continuously monitoring and capturing all board state information during gameplay.
 
-### 2. LLM-Powered Python Agent  
-- **Advanced Analysis:** Utilizes powerful language model capabilities  
-- **Strategic Advice:** Gives you real-time tactical recommendations  
-- **Voice Communication:** Interact naturally with voice commands  
-- **Adaptive Decisions:** Adjusts strategies based on different game scenarios  
+- **Real-Time Monitoring:** Continuously tracks your game state as it happens, capturing every change in real-time
+- **Comprehensive Data Collection:** Records all board data including:
+  - Player hero information (name, health, hero power with cost)
+  - Resources (available gold, tavern tier, upgrade costs)
+  - Board state (warband minions, hand cards, tavern offerings)
+  - Game phase and turn information
+  - Battle results and health changes
+- **JSON Outputs:** Provides clear, structured JSON data for easy consumption
+- **Local Storage:** Automatically saves game state snapshots to local files for analysis
+- **Efficient Data Handling:** Ensures smooth performance with minimal impact on game performance
+- **API Endpoint Functionality:** Acts as a live data feed that other components can consume  
+
+### 2. RAG-Powered LLM Agent  
+The DeepBattler Agent is a **Retrieval-Augmented Generation (RAG) system** that combines real-time game state data with strategic knowledge to provide intelligent guidance.
+
+- **RAG Architecture:** Retrieves relevant game state information and augments it with strategic knowledge for context-aware responses
+- **Advanced Analysis:** Utilizes powerful language model capabilities (Google Gemini Live + Gemini 2.5 Flash Lite)
+- **Real-Time Data Integration:** Consumes live game state data from the plugin API endpoint
+- **Strategic Advice:** Provides real-time tactical recommendations based on current board state
+- **Voice Communication:** Interact naturally with voice commands via microphone
+- **Text Display:** Visual text suggestions displayed in an overlay window
+- **Adaptive Decisions:** Adjusts strategies based on different game scenarios and board states
+- **Dual API Architecture:** Parallel audio (Live API) and text (generate_content API) generation
+- **Context-Aware Responses:** Uses retrieved game state data to provide relevant, timely advice  
 
 ## Setup and Configuration  
 
@@ -96,7 +130,35 @@ DeepBattler's strength can match that of the **top 0.1% players on EU servers (8
 
 ### LLM Agent Setup  
 
-#### Using OpenAI GPT  
+#### Using Google Gemini Live (Recommended) 🎤
+1. **Install the required Python packages:**  
+   ```bash  
+   pip install google-genai python-dotenv pyaudio
+   ```  
+   
+2. **Set up your API key:**
+   - Create a `.env` file in the `Agent/real_time_caller/` directory
+   - Add your Google Gemini API key:
+     ```
+     GEMINI_API_KEY=your-api-key-here
+     ```
+   - Get your API key from: https://ai.google.dev/
+   
+3. **Launch the LLM agent:**  
+   ```bash  
+   cd Agent/real_time_caller
+   python gemini_live.py
+   ```  
+   
+4. **Features:**
+   - **Voice Interaction**: Speak naturally to DeepBattler via microphone
+   - **Real-Time Suggestions**: Visual text window shows strategic advice
+   - **Auto Game Detection**: Automatically adapts when a game starts
+   - **Dynamic Updates**: System prompts update as game state changes
+
+---
+
+#### Using OpenAI GPT (Legacy)  
 1. **Install the required Python packages:**  
    ```bash  
    pip install openai playsound==1.2.2  
@@ -115,13 +177,13 @@ DeepBattler's strength can match that of the **top 0.1% players on EU servers (8
 
 ---
 
-#### Using Google Gemma  
+#### Using Google Gemma (Legacy)  
 1. **Install the required Python packages:**  
    ```bash  
    pip install keras_hub jax keras gtts playsound==1.2.2
    ```  
    *Note: Version 1.2.2 of `playsound` is required for compatibility.*  
-
+   
 2. **Set up the Gemma environment:**  
    Your script (`Gemma_caller.py`) includes the following environment configurations:
    ```python
@@ -180,19 +242,55 @@ DeepBattler，是一款专为《炉石传说》酒馆战棋打造的先进助手
 
 DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其深入的语音辅助指导，帮助你在关键时刻做出最佳决策。让我们一起提升你的游戏水平吧！
 
+## ✨ 新功能特性
+
+### 🎯 实时可视化建议窗口
+- **游戏内覆盖层**：精美的浮动窗口直接在游戏界面中显示DeepBattler的战略建议
+- **实时更新**：随着游戏状态变化，建议实时更新
+- **清晰格式**：易于阅读的项目符号，字体更大更清晰
+- **位置控制**：可拖拽窗口，保持在您喜欢的位置（默认：左下角）
+
+### 🎤 语音+文字双输出
+- **语音交互**：使用Google Gemini Live API进行自然语音对话
+- **文字显示**：同时使用Gemini 2.5 Flash Lite生成文字输出，方便视觉参考
+- **并行处理**：音频和文字响应同时生成，两全其美
+- **智能更新**：每次agent响应时，文字建议自动刷新
+
+### 🔄 动态游戏状态集成
+- **自动检测**：自动检测游戏开始并相应调整
+- **实时监控**：持续监控游戏状态变化并更新系统提示
+- **休闲聊天模式**：当没有游戏活动时，DeepBattler切换到友好对话模式
+- **无缝切换**：在游戏模式和聊天模式之间平滑切换
+
 ## 系统组件  
 
-### 1. 《炉石传说》卡组跟踪器（HDT）插件  
-- **实时监控:** 实时跟踪你的游戏状态  
-- **JSON输出:** 提供清晰、结构化的数据  
-- **高效数据处理:** 确保流畅运行  
-- **深入洞察:** 提供全面的游戏分析  
+### 1. 《炉石传说》卡组跟踪器（HDT）插件 - 实时数据采集API  
+DeepBattler 插件作为**战棋棋盘数据的实时API端点**，持续监控并捕获游戏过程中的所有棋盘状态信息。
 
-### 2. LLM驱动的Python代理  
-- **高级分析:** 利用强大的语言模型功能  
-- **战略建议:** 提供实时战术建议  
-- **语音通信:** 自然的语音交互  
-- **自适应决策:** 根据不同游戏情境调整策略  
+- **实时监控:** 持续跟踪你的游戏状态，实时捕获每一个变化
+- **全面数据采集:** 记录所有棋盘数据，包括：
+  - 玩家英雄信息（名称、生命值、英雄技能及费用）
+  - 资源信息（可用金币、酒馆等级、升级费用）
+  - 棋盘状态（战场随从、手牌、酒馆选项）
+  - 游戏阶段和回合信息
+  - 战斗结果和生命值变化
+- **JSON输出:** 提供清晰、结构化的JSON数据，便于使用
+- **本地存储:** 自动将游戏状态快照保存到本地文件以供分析
+- **高效数据处理:** 确保流畅运行，对游戏性能影响最小
+- **API端点功能:** 作为实时数据流，供其他组件使用  
+
+### 2. RAG驱动的LLM代理  
+DeepBattler 代理是一个**检索增强生成（RAG）系统**，结合实时游戏状态数据和战略知识，提供智能指导。
+
+- **RAG架构:** 检索相关游戏状态信息，并用战略知识增强，实现上下文感知响应
+- **高级分析:** 利用强大的语言模型功能（Google Gemini Live + Gemini 2.5 Flash Lite）
+- **实时数据集成:** 从插件API端点消费实时游戏状态数据
+- **战略建议:** 基于当前棋盘状态提供实时战术建议
+- **语音通信:** 通过麦克风进行自然语音交互
+- **文字显示:** 在覆盖窗口中显示可视化文字建议
+- **自适应决策:** 根据不同游戏情境和棋盘状态调整策略
+- **双API架构:** 并行生成音频（Live API）和文字（generate_content API）
+- **上下文感知响应:** 使用检索到的游戏状态数据提供相关、及时的建议  
 
 ## 设置与配置  
 
@@ -263,20 +361,50 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其�
    ![HDT插件设置](https://github.com/user-attachments/assets/23f41637-d517-4b79-87d5-cc6e5009ac24)
 
 ### LLM代理设置  
+
+#### 使用Google Gemini Live（推荐）🎤
+1. **安装所需的Python包：**  
+   ```bash  
+   pip install google-genai python-dotenv pyaudio
+   ```  
+   
+2. **设置API密钥：**
+   - 在 `Agent/real_time_caller/` 目录下创建 `.env` 文件
+   - 添加您的Google Gemini API密钥：
+     ```
+     GEMINI_API_KEY=your-api-key-here
+     ```
+   - 从以下地址获取API密钥：https://ai.google.dev/
+   
+3. **启动LLM代理：**  
+   ```bash  
+   cd Agent/real_time_caller
+   python gemini_live.py
+   ```  
+   
+4. **功能特性：**
+   - **语音交互**：通过麦克风自然与DeepBattler对话
+   - **实时建议**：可视化文字窗口显示战略建议
+   - **自动游戏检测**：游戏开始时自动适配
+   - **动态更新**：系统提示随游戏状态变化而更新
+
+---
+
+#### 使用OpenAI GPT（旧版）  
 1. **安装所需的Python包：**  
    ```bash  
    pip install openai playsound==1.2.2  
    ```  
    *注意：需要兼容性，请使用 `playsound` 的1.2.2版本。*  
    
-2. **在 `DeepBattler.py` 中添加你的OpenAI API密钥：**  
+2. **在 `Openai_caller.py` 中添加你的OpenAI API密钥：**  
    ```python  
    api_key = "your-openai-api-key-here"  
    ```  
    
 3. **启动LLM代理：**  
    ```bash  
-   python DeepBattler.py  
+   python Openai_caller.py  
    ```  
 
 ## 自定义非商业许可证
@@ -320,19 +448,55 @@ DeepBattlerへようこそ。『ハースストーン』のバトルグラウン
 
 DeepBattlerの実力は**EUサーバーの上位0.1%のプレイヤーに匹敵します**。音声支援ガイダンスにより、重要な場面で最適な判断を下す手助けをします。さあ、一緒にゲームをレベルアップしましょう！
 
+## ✨ 新機能
+
+### 🎯 リアルタイム視覚的提案ウィンドウ
+- **ゲーム内オーバーレイ**：美しいフローティングウィンドウがゲームインターフェースに直接DeepBattlerの戦略的提案を表示
+- **ライブ更新**：ゲーム状態が変化すると、提案がリアルタイムで更新されます
+- **明確なフォーマット**：より大きく、より明確なフォントで読みやすい箇条書き
+- **位置制御**：好みの位置に固定できるドラッグ可能なウィンドウ（デフォルト：左下角）
+
+### 🎤 音声+テキストデュアル出力
+- **音声インタラクション**：Google Gemini Live APIを使用した自然な音声会話
+- **テキスト表示**：視覚的参照のためにGemini 2.5 Flash Liteを使用した同時テキスト出力
+- **並列処理**：音声とテキストの応答が同時に生成され、両方の利点を享受
+- **スマート更新**：エージェントの応答ごとにテキスト提案が自動的に更新されます
+
+### 🔄 動的ゲーム状態統合
+- **自動検出**：ゲームが開始されると自動的に検出し、それに応じて適応
+- **リアルタイム監視**：ゲーム状態の変化を継続的に監視し、システムプロンプトを更新
+- **カジュアルチャットモード**：ゲームがアクティブでない場合、DeepBattlerはフレンドリーな会話モードに切り替わります
+- **シームレスな切り替え**：ゲームモードとチャットモードの間をスムーズに切り替え
+
 ## システムコンポーネント  
 
-### 1. 『ハースストーン』デックトラッカー（HDT）プラグイン  
-- **リアルタイム監視:** ゲーム状態をリアルタイムで追跡  
-- **JSON出力:** 明確で構造化されたデータを提供  
-- **効率的なデータ処理:** スムーズなパフォーマンスを保証  
-- **詳細なインサイト:** ゲームの分析を包括的に提供  
+### 1. 『ハースストーン』デックトラッカー（HDT）プラグイン - リアルタイムデータ収集API  
+DeepBattlerプラグインは、**バトルグラウンドボードデータのリアルタイムAPIエンドポイント**として機能し、ゲームプレイ中にすべてのボード状態情報を継続的に監視およびキャプチャします。
 
-### 2. LLM搭載Pythonエージェント  
-- **高度な分析:** 強力な言語モデル機能を活用  
-- **戦略的アドバイス:** リアルタイムで戦術的な提案を提供  
-- **音声コミュニケーション:** 自然な音声インタラクション  
-- **適応型の意思決定:** ゲームの状況に応じて戦略を調整  
+- **リアルタイム監視:** ゲーム状態をリアルタイムで継続的に追跡し、すべての変化をリアルタイムでキャプチャ
+- **包括的なデータ収集:** すべてのボードデータを記録：
+  - プレイヤーヒーロー情報（名前、体力、ヒーローパワーとコスト）
+  - リソース情報（利用可能なゴールド、酒場ティア、アップグレードコスト）
+  - ボード状態（戦場のミニオン、手札、酒場のオプション）
+  - ゲームフェーズとターン情報
+  - バトル結果と体力変化
+- **JSON出力:** 明確で構造化されたJSONデータを提供し、簡単に使用可能
+- **ローカルストレージ:** 分析のためにゲーム状態スナップショットをローカルファイルに自動保存
+- **効率的なデータ処理:** ゲームパフォーマンスへの影響を最小限に抑えながら、スムーズなパフォーマンスを保証
+- **APIエンドポイント機能:** 他のコンポーネントが消費できるライブデータフィードとして機能  
+
+### 2. RAG搭載LLMエージェント  
+DeepBattlerエージェントは、リアルタイムのゲーム状態データと戦略的知識を組み合わせて、インテリジェントなガイダンスを提供する**検索拡張生成（RAG）システム**です。
+
+- **RAGアーキテクチャ:** 関連するゲーム状態情報を検索し、戦略的知識で拡張して、コンテキスト認識応答を実現
+- **高度な分析:** 強力な言語モデル機能を活用（Google Gemini Live + Gemini 2.5 Flash Lite）
+- **リアルタイムデータ統合:** プラグインAPIエンドポイントからリアルタイムのゲーム状態データを消費
+- **戦略的アドバイス:** 現在のボード状態に基づいてリアルタイムで戦術的な提案を提供
+- **音声コミュニケーション:** マイクを通じた自然な音声インタラクション
+- **テキスト表示:** オーバーレイウィンドウに視覚的なテキスト提案を表示
+- **適応型の意思決定:** ゲームの状況とボード状態に応じて戦略を調整
+- **デュアルAPIアーキテクチャ:** 音声（Live API）とテキスト（generate_content API）の並列生成
+- **コンテキスト認識応答:** 検索されたゲーム状態データを使用して、関連性があり、タイムリーなアドバイスを提供  
 
 ## セットアップと構成  
 
@@ -404,7 +568,36 @@ DeepBattlerの実力は**EUサーバーの上位0.1%のプレイヤーに匹敵�
 
 ### LLMエージェントのセットアップ
 
-## OpenAI GPTを使用する場合
+#### Google Gemini Liveを使用する場合（推奨）🎤
+
+1. **必要なPythonパッケージをインストールします:**
+```bash
+pip install google-genai python-dotenv pyaudio
+```
+
+2. **APIキーを設定します:**
+   - `Agent/real_time_caller/` ディレクトリに `.env` ファイルを作成
+   - Google Gemini APIキーを追加：
+     ```
+     GEMINI_API_KEY=your-api-key-here
+     ```
+   - 以下のURLからAPIキーを取得：https://ai.google.dev/
+
+3. **LLMエージェントを起動します:**
+```bash
+cd Agent/real_time_caller
+python gemini_live.py
+```
+
+4. **機能:**
+   - **音声インタラクション**：マイクを通じてDeepBattlerと自然に会話
+   - **リアルタイム提案**：視覚的なテキストウィンドウが戦略的アドバイスを表示
+   - **自動ゲーム検出**：ゲームが開始されると自動的に適応
+   - **動的更新**：ゲーム状態の変化に応じてシステムプロンプトが更新されます
+
+---
+
+#### OpenAI GPTを使用する場合（旧版）
 
 1. **必要なPythonパッケージをインストールします:**
 ```bash
@@ -424,7 +617,7 @@ python Openai_caller.py
 
 ---
 
-## Google Gemmaのセットアップ方法
+#### Google Gemmaのセットアップ方法（旧版）
 
 Gemmaを使ったLLMエージェントの設定および起動方法は以下の通りです。
 

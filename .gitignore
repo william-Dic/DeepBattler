@@ -1,0 +1,68 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# C# build outputs
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+*.cache
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Game state files (temporary)
+Agent/game_state.json
+Agent/game_history.json
+Agent/resources/
+Agent/real_time_caller/latest_game_state.json
+Agent/real_time_caller/agent_output.txt
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+

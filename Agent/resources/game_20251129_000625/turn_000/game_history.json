@@ -1,0 +1,62 @@
+{
+  "turn_number": 0,
+  "phase": "PlayerTurn",
+  "state": {
+  "game_state": {
+    "turn_number": 1,
+    "phase": "PlayerTurn"
+  },
+  "player_hero": {
+    "name": "Sneed",
+    "current_health": 30,
+    "hero_power": {
+      "description": "Passive. Start the game with a 2/1 Shredder that summons a minion from your hand and gives it Divine Shield.",
+      "cost": 0
+    }
+  },
+  "resources": {
+    "available_gold": 5,
+    "tavern_tier": 1,
+    "tavern_upgrade_cost": "5"
+  },
+  "board_state": {
+    "warband_size": 3,
+    "warband": [
+      {
+        "name": "Manasaber",
+        "attack": 4,
+        "health": 1,
+        "description": "Deathrattle: Summon two 0/1 Cublings with Taunt.",
+        "race": "Beast",
+        "tier": 1
+      },
+      {
+        "name": "Picky Eater",
+        "attack": 3,
+        "health": 4,
+        "description": "Battlecry: Consume a random minion in the Tavern to gain its stats.",
+        "race": "Demon",
+        "tier": 1
+      },
+      {
+        "name": "Sun-Bacon Relaxer",
+        "attack": 2,
+        "health": 3,
+        "description": "When you sell this, get 2 Blood Gems.",
+        "race": "Quilboar",
+        "tier": 1
+      }
+    ],
+    "hand_size": 0,
+    "hand": [],
+    "tavern_available": 0,
+    "tavern_entities": []
+  }
+},
+  "action_taken": "",
+  "battle_result": "None",
+  "health_before_battle": 0,
+  "health_after_battle": 30,
+  "health_change": 30,
+  "reward": 16
+}
