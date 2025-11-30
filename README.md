@@ -1,5 +1,3 @@
-# [❗Update: We are using GRPO to train a new SOTA RL Policy! The GRPO-trained model is now available on HuggingFace. Check it out!]
----
 # DeepBattler - Your BEST LLM Battlegrounds Coach/Friend！🍻🍻 <a id="english"></a>
 
 **[English](#english)** | **[中文](#chinese)** | **[日本語](#japanese)**
