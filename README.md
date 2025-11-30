@@ -34,19 +34,33 @@ DeepBattler's strength can match that of the **top 0.1% players on EU servers (8
 
 ## System Components  
 
-### 1. Hearthstone Deck Tracker (HDT) Plugin  
-- **Real-Time Monitoring:** Keeps track of your game state as it happens  
-- **JSON Outputs:** Provides clear, structured data  
-- **Efficient Data Handling:** Ensures smooth performance  
-- **In-Depth Insights:** Offers comprehensive analysis of your gameplay  
+### 1. Hearthstone Deck Tracker (HDT) Plugin - Real-Time Data Collection API  
+The DeepBattler Plugin serves as a **real-time API endpoint for Battleground Board data**, continuously monitoring and capturing all board state information during gameplay.
 
-### 2. LLM-Powered Python Agent  
+- **Real-Time Monitoring:** Continuously tracks your game state as it happens, capturing every change in real-time
+- **Comprehensive Data Collection:** Records all board data including:
+  - Player hero information (name, health, hero power with cost)
+  - Resources (available gold, tavern tier, upgrade costs)
+  - Board state (warband minions, hand cards, tavern offerings)
+  - Game phase and turn information
+  - Battle results and health changes
+- **JSON Outputs:** Provides clear, structured JSON data for easy consumption
+- **Local Storage:** Automatically saves game state snapshots to local files for analysis
+- **Efficient Data Handling:** Ensures smooth performance with minimal impact on game performance
+- **API Endpoint Functionality:** Acts as a live data feed that other components can consume  
+
+### 2. RAG-Powered LLM Agent  
+The DeepBattler Agent is a **Retrieval-Augmented Generation (RAG) system** that combines real-time game state data with strategic knowledge to provide intelligent guidance.
+
+- **RAG Architecture:** Retrieves relevant game state information and augments it with strategic knowledge for context-aware responses
 - **Advanced Analysis:** Utilizes powerful language model capabilities (Google Gemini Live + Gemini 2.5 Flash Lite)
-- **Strategic Advice:** Gives you real-time tactical recommendations
+- **Real-Time Data Integration:** Consumes live game state data from the plugin API endpoint
+- **Strategic Advice:** Provides real-time tactical recommendations based on current board state
 - **Voice Communication:** Interact naturally with voice commands via microphone
 - **Text Display:** Visual text suggestions displayed in an overlay window
-- **Adaptive Decisions:** Adjusts strategies based on different game scenarios
-- **Dual API Architecture:** Parallel audio (Live API) and text (generate_content API) generation  
+- **Adaptive Decisions:** Adjusts strategies based on different game scenarios and board states
+- **Dual API Architecture:** Parallel audio (Live API) and text (generate_content API) generation
+- **Context-Aware Responses:** Uses retrieved game state data to provide relevant, timely advice  
 
 ## Setup and Configuration  
 
@@ -252,19 +266,33 @@ DeepBattler的实力可以匹敌**欧服排名前0.1%的玩家**，得益于其�
 
 ## 系统组件  
 
-### 1. 《炉石传说》卡组跟踪器（HDT）插件  
-- **实时监控:** 实时跟踪你的游戏状态  
-- **JSON输出:** 提供清晰、结构化的数据  
-- **高效数据处理:** 确保流畅运行  
-- **深入洞察:** 提供全面的游戏分析  
+### 1. 《炉石传说》卡组跟踪器（HDT）插件 - 实时数据采集API  
+DeepBattler 插件作为**战棋棋盘数据的实时API端点**，持续监控并捕获游戏过程中的所有棋盘状态信息。
 
-### 2. LLM驱动的Python代理  
+- **实时监控:** 持续跟踪你的游戏状态，实时捕获每一个变化
+- **全面数据采集:** 记录所有棋盘数据，包括：
+  - 玩家英雄信息（名称、生命值、英雄技能及费用）
+  - 资源信息（可用金币、酒馆等级、升级费用）
+  - 棋盘状态（战场随从、手牌、酒馆选项）
+  - 游戏阶段和回合信息
+  - 战斗结果和生命值变化
+- **JSON输出:** 提供清晰、结构化的JSON数据，便于使用
+- **本地存储:** 自动将游戏状态快照保存到本地文件以供分析
+- **高效数据处理:** 确保流畅运行，对游戏性能影响最小
+- **API端点功能:** 作为实时数据流，供其他组件使用  
+
+### 2. RAG驱动的LLM代理  
+DeepBattler 代理是一个**检索增强生成（RAG）系统**，结合实时游戏状态数据和战略知识，提供智能指导。
+
+- **RAG架构:** 检索相关游戏状态信息，并用战略知识增强，实现上下文感知响应
 - **高级分析:** 利用强大的语言模型功能（Google Gemini Live + Gemini 2.5 Flash Lite）
-- **战略建议:** 提供实时战术建议
+- **实时数据集成:** 从插件API端点消费实时游戏状态数据
+- **战略建议:** 基于当前棋盘状态提供实时战术建议
 - **语音通信:** 通过麦克风进行自然语音交互
 - **文字显示:** 在覆盖窗口中显示可视化文字建议
-- **自适应决策:** 根据不同游戏情境调整策略
-- **双API架构:** 并行生成音频（Live API）和文字（generate_content API）  
+- **自适应决策:** 根据不同游戏情境和棋盘状态调整策略
+- **双API架构:** 并行生成音频（Live API）和文字（generate_content API）
+- **上下文感知响应:** 使用检索到的游戏状态数据提供相关、及时的建议  
 
 ## 设置与配置  
 
@@ -444,19 +472,33 @@ DeepBattlerの実力は**EUサーバーの上位0.1%のプレイヤーに匹敵�
 
 ## システムコンポーネント  
 
-### 1. 『ハースストーン』デックトラッカー（HDT）プラグイン  
-- **リアルタイム監視:** ゲーム状態をリアルタイムで追跡  
-- **JSON出力:** 明確で構造化されたデータを提供  
-- **効率的なデータ処理:** スムーズなパフォーマンスを保証  
-- **詳細なインサイト:** ゲームの分析を包括的に提供  
+### 1. 『ハースストーン』デックトラッカー（HDT）プラグイン - リアルタイムデータ収集API  
+DeepBattlerプラグインは、**バトルグラウンドボードデータのリアルタイムAPIエンドポイント**として機能し、ゲームプレイ中にすべてのボード状態情報を継続的に監視およびキャプチャします。
 
-### 2. LLM搭載Pythonエージェント  
+- **リアルタイム監視:** ゲーム状態をリアルタイムで継続的に追跡し、すべての変化をリアルタイムでキャプチャ
+- **包括的なデータ収集:** すべてのボードデータを記録：
+  - プレイヤーヒーロー情報（名前、体力、ヒーローパワーとコスト）
+  - リソース情報（利用可能なゴールド、酒場ティア、アップグレードコスト）
+  - ボード状態（戦場のミニオン、手札、酒場のオプション）
+  - ゲームフェーズとターン情報
+  - バトル結果と体力変化
+- **JSON出力:** 明確で構造化されたJSONデータを提供し、簡単に使用可能
+- **ローカルストレージ:** 分析のためにゲーム状態スナップショットをローカルファイルに自動保存
+- **効率的なデータ処理:** ゲームパフォーマンスへの影響を最小限に抑えながら、スムーズなパフォーマンスを保証
+- **APIエンドポイント機能:** 他のコンポーネントが消費できるライブデータフィードとして機能  
+
+### 2. RAG搭載LLMエージェント  
+DeepBattlerエージェントは、リアルタイムのゲーム状態データと戦略的知識を組み合わせて、インテリジェントなガイダンスを提供する**検索拡張生成（RAG）システム**です。
+
+- **RAGアーキテクチャ:** 関連するゲーム状態情報を検索し、戦略的知識で拡張して、コンテキスト認識応答を実現
 - **高度な分析:** 強力な言語モデル機能を活用（Google Gemini Live + Gemini 2.5 Flash Lite）
-- **戦略的アドバイス:** リアルタイムで戦術的な提案を提供
+- **リアルタイムデータ統合:** プラグインAPIエンドポイントからリアルタイムのゲーム状態データを消費
+- **戦略的アドバイス:** 現在のボード状態に基づいてリアルタイムで戦術的な提案を提供
 - **音声コミュニケーション:** マイクを通じた自然な音声インタラクション
 - **テキスト表示:** オーバーレイウィンドウに視覚的なテキスト提案を表示
-- **適応型の意思決定:** ゲームの状況に応じて戦略を調整
-- **デュアルAPIアーキテクチャ:** 音声（Live API）とテキスト（generate_content API）の並列生成  
+- **適応型の意思決定:** ゲームの状況とボード状態に応じて戦略を調整
+- **デュアルAPIアーキテクチャ:** 音声（Live API）とテキスト（generate_content API）の並列生成
+- **コンテキスト認識応答:** 検索されたゲーム状態データを使用して、関連性があり、タイムリーなアドバイスを提供  
 
 ## セットアップと構成  
 
