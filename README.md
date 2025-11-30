@@ -1,3 +1,5 @@
+# [❗Update: We are using GRPO to train a new SOTA RL Policy! The GRPO-trained model is now available on HuggingFace. Check it out!]
+---
 # DeepBattler - Your BEST LLM Battlegrounds Coach/Friend！🍻🍻 <a id="english"></a>
 
 **[English](#english)** | **[中文](#chinese)** | **[日本語](#japanese)**
@@ -58,7 +60,18 @@ The DeepBattler Agent is a **Retrieval-Augmented Generation (RAG) system** that 
 - **Text Display:** Visual text suggestions displayed in an overlay window
 - **Adaptive Decisions:** Adjusts strategies based on different game scenarios and board states
 - **Dual API Architecture:** Parallel audio (Live API) and text (generate_content API) generation
-- **Context-Aware Responses:** Uses retrieved game state data to provide relevant, timely advice  
+- **Context-Aware Responses:** Uses retrieved game state data to provide relevant, timely advice
+
+### 3. GRPO-Trained RL Policy (Advanced) 🚀
+DeepBattler also includes a **Group Relative Policy Optimization (GRPO)** trained reinforcement learning policy for advanced strategic decision-making.
+
+- **GRPO Training:** State-of-the-art RL algorithm trained on extensive Battlegrounds gameplay data
+- **Optimal Decision Making:** Learns from expert-level gameplay to provide superior strategic recommendations
+- **Model Availability:** The GRPO-trained model is available on HuggingFace for research and advanced use cases
+- **Performance:** Achieves performance comparable to top-tier players through learned policy optimization
+- **HuggingFace Integration:** Easy access to pre-trained models and checkpoints
+
+**🔗 Access the GRPO model on HuggingFace:** [https://huggingface.co/spaces/iteratehack/deepbattler/tree/main](https://huggingface.co/spaces/iteratehack/deepbattler/tree/main)  
 
 ## Setup and Configuration  
 
@@ -290,7 +303,18 @@ DeepBattler 代理是一个**检索增强生成（RAG）系统**，结合实时�
 - **文字显示:** 在覆盖窗口中显示可视化文字建议
 - **自适应决策:** 根据不同游戏情境和棋盘状态调整策略
 - **双API架构:** 并行生成音频（Live API）和文字（generate_content API）
-- **上下文感知响应:** 使用检索到的游戏状态数据提供相关、及时的建议  
+- **上下文感知响应:** 使用检索到的游戏状态数据提供相关、及时的建议
+
+### 3. GRPO训练的强化学习策略（高级版）🚀
+DeepBattler 还包含一个**组相对策略优化（GRPO）**训练的强化学习策略，用于高级战略决策。
+
+- **GRPO训练:** 基于大量战棋游戏数据训练的最先进强化学习算法
+- **最优决策:** 从专家级游戏玩法中学习，提供卓越的战略建议
+- **模型可用性:** GRPO训练的模型已在 HuggingFace 上提供，供研究和高级用例使用
+- **性能表现:** 通过学习的策略优化，达到与顶级玩家相当的性能
+- **HuggingFace集成:** 轻松访问预训练模型和检查点
+
+**🔗 在 HuggingFace 上访问 GRPO 模型：** [https://huggingface.co/spaces/iteratehack/deepbattler/tree/main](https://huggingface.co/spaces/iteratehack/deepbattler/tree/main)  
 
 ## 设置与配置  
 
@@ -496,7 +520,18 @@ DeepBattlerエージェントは、リアルタイムのゲーム状態データ
 - **テキスト表示:** オーバーレイウィンドウに視覚的なテキスト提案を表示
 - **適応型の意思決定:** ゲームの状況とボード状態に応じて戦略を調整
 - **デュアルAPIアーキテクチャ:** 音声（Live API）とテキスト（generate_content API）の並列生成
-- **コンテキスト認識応答:** 検索されたゲーム状態データを使用して、関連性があり、タイムリーなアドバイスを提供  
+- **コンテキスト認識応答:** 検索されたゲーム状態データを使用して、関連性があり、タイムリーなアドバイスを提供
+
+### 3. GRPO訓練された強化学習ポリシー（上級版）🚀
+DeepBattlerには、高度な戦略的意思決定のための**グループ相対ポリシー最適化（GRPO）**訓練された強化学習ポリシーも含まれています。
+
+- **GRPO訓練:** 広範なバトルグラウンドゲームプレイデータで訓練された最先端のRLアルゴリズム
+- **最適な意思決定:** エキスパートレベルのゲームプレイから学習し、優れた戦略的提案を提供
+- **モデル可用性:** GRPO訓練されたモデルは、研究および高度なユースケースのためにHuggingFaceで利用可能
+- **パフォーマンス:** 学習されたポリシー最適化を通じて、トップティアプレイヤーに匹敵するパフォーマンスを達成
+- **HuggingFace統合:** 事前訓練されたモデルとチェックポイントへの簡単なアクセス
+
+**🔗 HuggingFaceでGRPOモデルにアクセス：** [https://huggingface.co/spaces/iteratehack/deepbattler/tree/main](https://huggingface.co/spaces/iteratehack/deepbattler/tree/main)  
 
 ## セットアップと構成  
 
